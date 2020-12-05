@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct HomeScreen : View{
-    @State private var selected = 0
+    @State private var selected = 3
 
     var body: some View{
         TabView(selection: $selected){

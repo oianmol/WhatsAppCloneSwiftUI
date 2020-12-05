@@ -17,7 +17,7 @@ struct SettingsCommonListItem:View{
     var body: some View{
         VStack{
             HStack{
-                Image(imageId)
+                Image(imageId).imageScale(.small)
                 Text(text)
                 Spacer()
                 Image("caraticon")

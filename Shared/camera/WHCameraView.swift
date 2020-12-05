@@ -7,11 +7,11 @@
 
 import Foundation
 import SwiftUI
-import CameraView
 
 struct WHCameraView:View{
     var body: some View{
-        CameraView().overlay(CameraTopView()).statusBar(hidden: true)
+        CameraViewController()
+            .overlay(CameraTopView()).statusBar(hidden: true)
     }
 }
 

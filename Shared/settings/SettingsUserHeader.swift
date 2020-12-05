@@ -9,6 +9,9 @@ import Foundation
 import SwiftUI
 
 struct SettingsUserHeader : View{
+    
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some View {
         VStack(alignment:.leading){
             HStack(alignment:.center){
@@ -24,6 +27,6 @@ struct SettingsUserHeader : View{
                 Spacer()
                 Image("caraticon")
             }.widthMatchParent().padding()
-        }.background(Color.white)
+        }.background(colorScheme == .dark ? Color.black: Color.white)
     }
 }

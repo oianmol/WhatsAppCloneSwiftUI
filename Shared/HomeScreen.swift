@@ -13,30 +13,55 @@ struct HomeScreen : View{
     
     var body: some View {
         let view = NavigationTabs(selected: self.$selected)
-        NavigationView{
-            if(selected == 3){
-           
+     
+            if(selected == 2){
+                view
+            }
+            else if(selected == 3){
+                NavigationView{
                     view.navigationBarItems(leading: Button("Edit"){
                         
                     },trailing: Button(action:{}){
                         Image(systemName: "pencil")
-                    })
-                   
-                
-              
+                    }).navigationTitle(getNavigationTitle())
+                }
+               
             }else if(selected == 4){
-                view
-                   .navigationBarItems(leading: Button("Privacy"){
-                       
-                   },trailing:Button(action: {}){
-                       
-                   })
+                NavigationView{
+                    view
+                        .navigationBarItems(leading: Button("Privacy"){
+                            
+                        },trailing:Button(action: {}){
+                            
+                        }).navigationTitle(getNavigationTitle())
+                }
+             
             }else{
-                view
+                NavigationView{
+                    view.navigationTitle(getNavigationTitle())
+                }
+           
             }
+      
+        
+        
+    }
+    
+    func getNavigationTitle() -> String{
+        switch selected {
+        case 0:
+            return "Status";
+        case 1:
+            return "Calls";
+        case 2:
+            return ""
+        case 3:
+            return "Chats";
+        case 4:
+            return "Settings"
+        default:
+            return "Tag";
         }
-        
-        
     }
     
     
@@ -71,26 +96,11 @@ struct NavigationTabs:View{
                 Image(self.selected == 4 ? "settings.selected":"settings.normal")
                 Text("Settings")
             }.tag(4)
-        }.navigationTitle(getNavigationTitle())
+        }
         
     }
     
-    func getNavigationTitle() -> String{
-        switch selected {
-        case 0:
-            return "Status";
-        case 1:
-            return "Calls";
-        case 2:
-            return "Camera"
-        case 3:
-            return "Chats";
-        case 4:
-            return "Settings"
-        default:
-            return "Tag";
-        }
-    }
+  
 }
 
 extension View{

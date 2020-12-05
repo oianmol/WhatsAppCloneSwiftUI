@@ -10,10 +10,13 @@ import SwiftUI
 
 
 struct SettingsFirstBlock : View{
+    
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some View{
         VStack(alignment:.leading){
             SettingsCommonListItem(imageId: "StarredMessages", text: "Starred Messages",divider: true)
             SettingsCommonListItem(imageId: "WhatsAppWeb", text: "WhatsaApp Web/Desktop",divider: false)
-        }.background(Color.white)
+        }.background(colorScheme == .dark ? Color.black: Color.white)
     }
 }

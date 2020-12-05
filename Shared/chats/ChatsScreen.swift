@@ -12,19 +12,22 @@ import SwiftUI
 struct ChatsScreen : View{
     let cars = ["Subaru WRX", "Tesla Model 3", "Porsche 911", "Renault Zoe", "DeLorean", "Mitsubishi Lancer", "Audi RS6","Subaru WRX", "Tesla Model 3", "Porsche 911", "Renault Zoe", "DeLorean", "Mitsubishi Lancer", "Audi RS6"]
     
-    
+    @State var text :String = ""
     var body: some View{
-            List{
+            ScrollView{
+                SearchBar(text: $text)
                 Header()
+                Divider().padding(EdgeInsets.init(top: 5, leading: 0, bottom: 0, trailing: 0))
+
                 ForEach(self.cars, id: \.self) { car in
                     NavigationLink(destination: ChatWithUserView(name:car)){
-                        ChatUserView(name:car).listRowInsets(.init(top: 0,
-                                                                   leading: -10,
-                                                                   bottom: 0,
-                                                                   trailing: -10))
+                        VStack{
+                            ChatUserView(name:car)
+                            Divider().padding(EdgeInsets.init(top: 5, leading: 15, bottom: 0, trailing: 0))
+                        }
                     }
                 }
-            }.listStyle(PlainListStyle())
+            }
             .resignKeyboardOnDragGesture()
     }
 }
@@ -39,10 +42,7 @@ struct Header:View{
             Button("New Group", action: {
                 
             }).foregroundColor(.blue)
-        }.listRowInsets(.init(top: 0,
-                              leading: 10,
-                              bottom: 0,
-                              trailing: 10))
+        }.padding(EdgeInsets.init(top: 0, leading: 10, bottom: 0, trailing: 10))
     }
 }
 

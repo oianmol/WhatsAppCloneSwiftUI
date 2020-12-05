@@ -12,7 +12,7 @@ struct SettingsScreen : View{
     
 
     var body: some View{
-        List{
+        ScrollView{
             Space()
             SettingsUserHeader()
             Space()
@@ -32,13 +32,10 @@ struct Space :View{
             
         }.frame(minWidth: 0,
                 maxWidth: .infinity,
-                minHeight: 15,
+                minHeight: 40,
                 maxHeight: .infinity,
                 alignment: .topLeading
-        ).background(Color.gray.opacity(0.2)).listRowInsets(.init(top: 0,
-                                                                  leading: -10,
-                                                                  bottom: 0,
-                                                                  trailing: -10))
+        ).background(Color.gray.opacity(0.2))
     }
 }
 

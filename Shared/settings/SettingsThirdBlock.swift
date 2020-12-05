@@ -9,10 +9,12 @@ import Foundation
 import SwiftUI
 
 struct SettingsThirdBlock : View{
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some View{
         VStack(alignment:.leading){
             SettingsCommonListItem(imageId: "Help", text: "Help",divider: true)
             SettingsCommonListItem(imageId: "TellFriend", text: "Tell a Friend",divider: false)
-        }.background(Color.white)
+        }.background(colorScheme == .dark ? Color.black: Color.white)
     }
 }

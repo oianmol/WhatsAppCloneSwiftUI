@@ -12,42 +12,37 @@ import SwiftUI
 struct ChatsScreen : View{
     let cars = ["Subaru WRX", "Tesla Model 3", "Porsche 911", "Renault Zoe", "DeLorean", "Mitsubishi Lancer", "Audi RS6","Subaru WRX", "Tesla Model 3", "Porsche 911", "Renault Zoe", "DeLorean", "Mitsubishi Lancer", "Audi RS6"]
     
-    @ObservedObject var searchBar: SearchBar = SearchBar()
-
+    
     var body: some View{
-        NavigationView{
             List{
-                HStack{
-                    Button("Broadcast Lists", action: {
-                        
-                    }).foregroundColor(.blue)
-                    Spacer()
-                    Button("New Group", action: {
-                        
-                    }).foregroundColor(.blue)
-                }.listRowInsets(.init(top: 0,
-                                      leading: 10,
-                                      bottom: 0,
-                                      trailing: 10))
-                ForEach(self.cars.filter {
-                    self.searchBar.text.isEmpty ? true : $0.lowercased().contains(self.searchBar.text.lowercased())
-                }, id: \.self) { car in
-                    ChatUserView(name:car).listRowInsets(.init(top: 0,
-                                                               leading: -10,
-                                                               bottom: 0,
-                                                               trailing: -10))
+                Header()
+                ForEach(self.cars, id: \.self) { car in
+                    NavigationLink(destination: ChatWithUserView(name:car)){
+                        ChatUserView(name:car).listRowInsets(.init(top: 0,
+                                                                   leading: -10,
+                                                                   bottom: 0,
+                                                                   trailing: -10))
+                    }
                 }
             }.listStyle(PlainListStyle())
-            .onAppear{
-                UITableView.appearance().separatorStyle = .singleLine
-            }
             .resignKeyboardOnDragGesture()
-            .add(self.searchBar)
-            .navigationTitle("Chats")
-            .navigationBarItems(leading: Button("Edit"){},trailing: Button(action:{}){
-                Image(systemName: "pencil")
-            })
-        }
+    }
+}
+
+struct Header:View{
+    var body: some View{
+        HStack{
+            Button("Broadcast Lists", action: {
+                
+            }).foregroundColor(.blue)
+            Spacer()
+            Button("New Group", action: {
+                
+            }).foregroundColor(.blue)
+        }.listRowInsets(.init(top: 0,
+                              leading: 10,
+                              bottom: 0,
+                              trailing: 10))
     }
 }
 
@@ -74,7 +69,7 @@ extension View {
     func resignKeyboardOnDragGesture() -> some View {
         return modifier(ResignKeyboardOnDragGesture())
     }
-
+    
 }
 
 

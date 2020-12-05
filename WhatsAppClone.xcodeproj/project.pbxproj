@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2D7590D9469F987DF3D6C4F4 /* Pods_WhatsAppClone__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10073A167FAD9CF252FA917 /* Pods_WhatsAppClone__iOS_.framework */; };
+		89886A01257B985E008C36B4 /* ChatWithUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89886A00257B985E008C36B4 /* ChatWithUserView.swift */; };
+		89886A02257B985E008C36B4 /* ChatWithUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89886A00257B985E008C36B4 /* ChatWithUserView.swift */; };
 		8989F6A7257B8987005152EF /* ChatUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989F6A6257B8987005152EF /* ChatUserView.swift */; };
 		8989F6A8257B8987005152EF /* ChatUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989F6A6257B8987005152EF /* ChatUserView.swift */; };
-		8989F6AE257B8C0A005152EF /* ViewControllerResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989F6AD257B8C0A005152EF /* ViewControllerResolver.swift */; };
-		8989F6AF257B8C0A005152EF /* ViewControllerResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989F6AD257B8C0A005152EF /* ViewControllerResolver.swift */; };
 		89BC5E76257B433D0061D614 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5E75257B433D0061D614 /* Tests_iOS.swift */; };
 		89BC5E81257B433D0061D614 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5E80257B433D0061D614 /* Tests_macOS.swift */; };
 		89BC5E83257B433D0061D614 /* WhatsAppCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5E5A257B433D0061D614 /* WhatsAppCloneApp.swift */; };
@@ -37,8 +37,6 @@
 		89BC5F12257B7A2C0061D614 /* CameraView in Frameworks */ = {isa = PBXBuildFile; productRef = 89BC5F11257B7A2C0061D614 /* CameraView */; };
 		89BC5F19257B7CDB0061D614 /* ChatsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */; };
 		89BC5F1A257B7CDB0061D614 /* ChatsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */; };
-		89BC5F20257B7E340061D614 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5F1F257B7E340061D614 /* SearchBar.swift */; };
-		89BC5F21257B7E340061D614 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5F1F257B7E340061D614 /* SearchBar.swift */; };
 		BCF8C78D010A5520778B8E1B /* Pods_WhatsAppClone__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF18A8BB1D31FD09947FD9E3 /* Pods_WhatsAppClone__macOS_.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,8 +60,8 @@
 /* Begin PBXFileReference section */
 		398E1ACFC18C671A383FBB21 /* Pods-WhatsAppClone (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppClone (macOS).debug.xcconfig"; path = "Target Support Files/Pods-WhatsAppClone (macOS)/Pods-WhatsAppClone (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		7B06A382F9BA4DA5405BE551 /* Pods-WhatsAppClone (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppClone (iOS).debug.xcconfig"; path = "Target Support Files/Pods-WhatsAppClone (iOS)/Pods-WhatsAppClone (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+		89886A00257B985E008C36B4 /* ChatWithUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWithUserView.swift; sourceTree = "<group>"; };
 		8989F6A6257B8987005152EF /* ChatUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserView.swift; sourceTree = "<group>"; };
-		8989F6AD257B8C0A005152EF /* ViewControllerResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerResolver.swift; sourceTree = "<group>"; };
 		89BC5E5A257B433D0061D614 /* WhatsAppCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsAppCloneApp.swift; sourceTree = "<group>"; };
 		89BC5E5C257B433D0061D614 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89BC5E61257B433D0061D614 /* WhatsAppClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAppClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +84,6 @@
 		89BC5EDC257B65DC0061D614 /* SettingsThirdBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsThirdBlock.swift; sourceTree = "<group>"; };
 		89BC5EEB257B6CEE0061D614 /* WHCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHCameraView.swift; sourceTree = "<group>"; };
 		89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsScreen.swift; sourceTree = "<group>"; };
-		89BC5F1F257B7E340061D614 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		8FACAAEBFB3D904FE02BEC06 /* Pods-WhatsAppClone (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppClone (iOS).release.xcconfig"; path = "Target Support Files/Pods-WhatsAppClone (iOS)/Pods-WhatsAppClone (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		AF18A8BB1D31FD09947FD9E3 /* Pods_WhatsAppClone__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsAppClone__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10073A167FAD9CF252FA917 /* Pods_WhatsAppClone__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsAppClone__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,9 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */,
-				89BC5F1F257B7E340061D614 /* SearchBar.swift */,
 				8989F6A6257B8987005152EF /* ChatUserView.swift */,
-				8989F6AD257B8C0A005152EF /* ViewControllerResolver.swift */,
+				89886A00257B985E008C36B4 /* ChatWithUserView.swift */,
 			);
 			path = chats;
 			sourceTree = "<group>";
@@ -465,7 +461,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8989F6AE257B8C0A005152EF /* ViewControllerResolver.swift in Sources */,
 				89BC5EEC257B6CEE0061D614 /* WHCameraView.swift in Sources */,
 				89BC5F19257B7CDB0061D614 /* ChatsScreen.swift in Sources */,
 				89BC5EB9257B55780061D614 /* SettingsUserHeader.swift in Sources */,
@@ -473,10 +468,10 @@
 				89BC5E83257B433D0061D614 /* WhatsAppCloneApp.swift in Sources */,
 				89BC5EDD257B65DC0061D614 /* SettingsThirdBlock.swift in Sources */,
 				89BC5EB1257B542F0061D614 /* SettingsScreen.swift in Sources */,
+				89886A01257B985E008C36B4 /* ChatWithUserView.swift in Sources */,
 				89BC5EC4257B617B0061D614 /* SettingsFirstBlock.swift in Sources */,
 				89BC5ECF257B64E50061D614 /* SettingsSecondBlock.swift in Sources */,
 				89BC5ED6257B651B0061D614 /* SettingsCommonListItem.swift in Sources */,
-				89BC5F20257B7E340061D614 /* SearchBar.swift in Sources */,
 				89BC5EA6257B47A40061D614 /* HomeScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,7 +480,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8989F6AF257B8C0A005152EF /* ViewControllerResolver.swift in Sources */,
 				89BC5EED257B6CEE0061D614 /* WHCameraView.swift in Sources */,
 				89BC5F1A257B7CDB0061D614 /* ChatsScreen.swift in Sources */,
 				89BC5EBA257B55780061D614 /* SettingsUserHeader.swift in Sources */,
@@ -493,10 +487,10 @@
 				89BC5E84257B433D0061D614 /* WhatsAppCloneApp.swift in Sources */,
 				89BC5EDE257B65DC0061D614 /* SettingsThirdBlock.swift in Sources */,
 				89BC5EB2257B542F0061D614 /* SettingsScreen.swift in Sources */,
+				89886A02257B985E008C36B4 /* ChatWithUserView.swift in Sources */,
 				89BC5EC5257B617B0061D614 /* SettingsFirstBlock.swift in Sources */,
 				89BC5ED0257B64E50061D614 /* SettingsSecondBlock.swift in Sources */,
 				89BC5ED7257B651B0061D614 /* SettingsCommonListItem.swift in Sources */,
-				89BC5F21257B7E340061D614 /* SearchBar.swift in Sources */,
 				89BC5EA7257B47A40061D614 /* HomeScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

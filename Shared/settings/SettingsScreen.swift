@@ -9,26 +9,36 @@ import Foundation
 import SwiftUI
 
 struct SettingsScreen : View{
+    
+
     var body: some View{
-        NavigationView{
-            ScrollView{
-                VStack{
-                    Spacer(minLength: 40)
-                    SettingsUserHeader()
-                    Spacer(minLength: 40)
-                    SettingsFirstBlock()
-                    Spacer(minLength: 40)
-                    SettingsSecondBlock()
-                    Spacer(minLength: 40)
-                    SettingsThirdBlock()
-                    Spacer(minLength: 40)
-                }.widthHeightmatchParent()
-            }.background(Color.gray.opacity(0.2))
-            .navigationTitle("Settings")
-            .navigationBarItems(leading: Button("Privacy"){
-                
-            })
-        }
+        List{
+            Space()
+            SettingsUserHeader()
+            Space()
+            SettingsFirstBlock()
+            Space()
+            SettingsSecondBlock()
+            Space()
+            SettingsThirdBlock()
+            Space()
+        }.listStyle(PlainListStyle())
+    }
+}
+
+struct Space :View{
+    var body: some View{
+        VStack{
+            
+        }.frame(minWidth: 0,
+                maxWidth: .infinity,
+                minHeight: 15,
+                maxHeight: .infinity,
+                alignment: .topLeading
+        ).background(Color.gray.opacity(0.2)).listRowInsets(.init(top: 0,
+                                                                  leading: -10,
+                                                                  bottom: 0,
+                                                                  trailing: -10))
     }
 }
 
@@ -48,7 +58,5 @@ public extension View {
                    maxWidth: .infinity,
                    alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
-
-    
     
 }

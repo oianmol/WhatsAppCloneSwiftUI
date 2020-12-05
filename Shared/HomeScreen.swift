@@ -10,7 +10,41 @@ import SwiftUI
 
 struct HomeScreen : View{
     @State private var selected = 3
+    
+    var body: some View {
+        let view = NavigationTabs(selected: self.$selected)
+        NavigationView{
+            if(selected == 3){
+           
+                    view.navigationBarItems(leading: Button("Edit"){
+                        
+                    },trailing: Button(action:{}){
+                        Image(systemName: "pencil")
+                    })
+                   
+                
+              
+            }else if(selected == 4){
+                view
+                   .navigationBarItems(leading: Button("Privacy"){
+                       
+                   },trailing:Button(action: {}){
+                       
+                   })
+            }else{
+                view
+            }
+        }
+        
+        
+    }
+    
+    
+}
 
+struct NavigationTabs:View{
+    @Binding var selected : Int
+    
     var body: some View{
         TabView(selection: $selected){
             Text("Status").tabItem {
@@ -37,10 +71,39 @@ struct HomeScreen : View{
                 Image(self.selected == 4 ? "settings.selected":"settings.normal")
                 Text("Settings")
             }.tag(4)
+        }.navigationTitle(getNavigationTitle())
         
+    }
+    
+    func getNavigationTitle() -> String{
+        switch selected {
+        case 0:
+            return "Status";
+        case 1:
+            return "Calls";
+        case 2:
+            return "Camera"
+        case 3:
+            return "Chats";
+        case 4:
+            return "Settings"
+        default:
+            return "Tag";
         }
     }
 }
+
+extension View{
+    func `if`<Content: View>(_ conditional: Bool, content: (Self) -> Content) -> some View {
+        if conditional {
+            return AnyView(content(self))
+        } else {
+            return AnyView(self)
+        }
+    }
+}
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

@@ -10,9 +10,10 @@ import SwiftUI
 
 struct HomeScreen : View{
     @State private var selected = 3
-    
+    @ObservedObject var searchBar: SearchBar = SearchBar()
+
     var body: some View {
-        let view = NavigationTabs(selected: self.$selected)
+        let view = NavigationTabs(selected: self.$selected,searchBar:searchBar)
      
             if(selected == 2){
                 view
@@ -23,7 +24,7 @@ struct HomeScreen : View{
                         
                     },trailing: Button(action:{}){
                         Image(systemName: "pencil")
-                    }).navigationTitle(getNavigationTitle())
+                    }).navigationTitle(getNavigationTitle()).add(searchBar)
                 }
                
             }else if(selected == 4){
@@ -69,7 +70,8 @@ struct HomeScreen : View{
 
 struct NavigationTabs:View{
     @Binding var selected : Int
-    
+    @ObservedObject var searchBar:SearchBar
+
     var body: some View{
         TabView(selection: $selected){
             Text("Status").tabItem {
@@ -87,7 +89,7 @@ struct NavigationTabs:View{
                 Text("Camera")
             }.tag(2)
             
-            ChatsScreen().tabItem {
+            ChatsScreen(searchBar:searchBar).tabItem {
                 Image(systemName:self.selected == 3 ? "message.fill":"message")
                 Text("Chats")
             }.tag(3)

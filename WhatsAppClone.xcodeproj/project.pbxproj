@@ -13,6 +13,7 @@
 		8952A2B5257BC09A00B6A253 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952A29D257BBF2200B6A253 /* CameraViewController.swift */; };
 		8952A2B6257BC09A00B6A253 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952A29D257BBF2200B6A253 /* CameraViewController.swift */; };
 		8952A2D2257BC5A600B6A253 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952A2D1257BC5A600B6A253 /* SearchBar.swift */; };
+		8952A2D8257BC9D800B6A253 /* ViewContentResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952A2D7257BC9D800B6A253 /* ViewContentResolver.swift */; };
 		89886A01257B985E008C36B4 /* ChatWithUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89886A00257B985E008C36B4 /* ChatWithUserView.swift */; };
 		89886A02257B985E008C36B4 /* ChatWithUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89886A00257B985E008C36B4 /* ChatWithUserView.swift */; };
 		8989F6A7257B8987005152EF /* ChatUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989F6A6257B8987005152EF /* ChatUserView.swift */; };
@@ -67,6 +68,7 @@
 		8952A29C257BBF0500B6A253 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		8952A29D257BBF2200B6A253 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		8952A2D1257BC5A600B6A253 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		8952A2D7257BC9D800B6A253 /* ViewContentResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContentResolver.swift; sourceTree = "<group>"; };
 		89886A00257B985E008C36B4 /* ChatWithUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWithUserView.swift; sourceTree = "<group>"; };
 		8989F6A6257B8987005152EF /* ChatUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserView.swift; sourceTree = "<group>"; };
 		89BC5E5A257B433D0061D614 /* WhatsAppCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsAppCloneApp.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				8952A2D1257BC5A600B6A253 /* SearchBar.swift */,
+				8952A2D7257BC9D800B6A253 /* ViewContentResolver.swift */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				89886A01257B985E008C36B4 /* ChatWithUserView.swift in Sources */,
 				89BC5EC4257B617B0061D614 /* SettingsFirstBlock.swift in Sources */,
 				8952A2B6257BC09A00B6A253 /* CameraViewController.swift in Sources */,
+				8952A2D8257BC9D800B6A253 /* ViewContentResolver.swift in Sources */,
 				89BC5ECF257B64E50061D614 /* SettingsSecondBlock.swift in Sources */,
 				89BC5ED6257B651B0061D614 /* SettingsCommonListItem.swift in Sources */,
 				89BC5EA6257B47A40061D614 /* HomeScreen.swift in Sources */,

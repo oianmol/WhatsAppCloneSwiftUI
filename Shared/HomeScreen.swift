@@ -23,7 +23,7 @@ struct HomeScreen : View{
                 Text("Calls")
             }.tag(1)
             
-            Text("Camera").tabItem {
+            WHCameraView().tabItem {
                 Image(systemName:self.selected == 2 ? "camera.fill":"camera")
                 Text("Camera")
             }.tag(2)
@@ -37,6 +37,7 @@ struct HomeScreen : View{
                 Image(self.selected == 4 ? "settings.selected":"settings.normal")
                 Text("Settings")
             }.tag(4)
+        
         }
     }
 }
@@ -46,4 +47,3 @@ struct ContentView_Previews: PreviewProvider {
         HomeScreen()
     }
 }
-

@@ -34,8 +34,6 @@ struct SettingsScreen : View{
 
 
 public extension View {
-    
-    
     func widthHeightmatchParent() -> some View {
         self.frame(minWidth: 0,
                    maxWidth: .infinity,

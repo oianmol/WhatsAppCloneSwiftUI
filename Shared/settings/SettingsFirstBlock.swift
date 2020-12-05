@@ -12,8 +12,8 @@ import SwiftUI
 struct SettingsFirstBlock : View{
     var body: some View{
         VStack(alignment:.leading){
-            SettingsCommonListItem(imageId: "StarredMessages", text: "Starred Messages")
-            SettingsCommonListItem(imageId: "WhatsAppWeb", text: "WhatsaApp Web/Desktop")
+            SettingsCommonListItem(imageId: "StarredMessages", text: "Starred Messages",divider: true)
+            SettingsCommonListItem(imageId: "WhatsAppWeb", text: "WhatsaApp Web/Desktop",divider: false)
         }.background(Color.white)
     }
 }

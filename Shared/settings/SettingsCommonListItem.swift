@@ -12,6 +12,7 @@ struct SettingsCommonListItem:View{
     
     let imageId:String
     let text:String
+    let divider:Bool
     
     var body: some View{
         VStack{
@@ -20,8 +21,10 @@ struct SettingsCommonListItem:View{
                 Text(text)
                 Spacer()
                 Image("caraticon")
-            }.widthMatchParent().frame(height:20).padding(EdgeInsets.init(top: 10, leading: 10, bottom: 10, trailing: 10))
-            Divider().padding(EdgeInsets.init(top: 0, leading: 50, bottom: 0, trailing: 0))
+            }.widthMatchParent().frame(height:20).padding(10)
+            if(divider){
+                Divider().padding(EdgeInsets.init(top: 0, leading: 50, bottom: 0, trailing: 0))
+            }
         }
       
     }

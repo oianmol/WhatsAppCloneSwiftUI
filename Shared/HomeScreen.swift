@@ -28,7 +28,7 @@ struct HomeScreen : View{
                 Text("Camera")
             }.tag(2)
             
-            Text("Chats").tabItem {
+            ChatsScreen().tabItem {
                 Image(systemName:self.selected == 3 ? "message.fill":"message")
                 Text("Chats")
             }.tag(3)

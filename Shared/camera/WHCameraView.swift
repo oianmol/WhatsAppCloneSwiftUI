@@ -9,9 +9,11 @@ import Foundation
 import SwiftUI
 
 struct WHCameraView:View{
-    var body: some View{
-        CameraViewController()
-            .overlay(CameraTopView()).statusBar(hidden: true)
+    var body: some View {
+        VStack{
+            CameraViewController()
+                .overlay(CameraTopView()).statusBar(hidden: true)
+        }.background(Color.black)
     }
 }
 

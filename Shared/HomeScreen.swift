@@ -19,7 +19,7 @@ struct HomeScreen : View{
                 view
             }
             else if(selected == 3){
-                NavigationView{
+                NavigationView {
                     view.navigationBarItems(leading: Button("Edit"){
                         
                     },trailing: Button(action:{}){

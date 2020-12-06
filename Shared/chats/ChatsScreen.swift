@@ -13,14 +13,14 @@ struct ChatsScreen : View{
     let cars = ["Subaru WRX", "Tesla Model 3", "Porsche 911", "Renault Zoe", "DeLorean", "Mitsubishi Lancer", "Audi RS6","Subaru WRX", "Tesla Model 3", "Porsche 911", "Renault Zoe", "DeLorean", "Mitsubishi Lancer", "Audi RS6"]
     
 
-    @ObservedObject  var searchBar:SearchBar
+    @ObservedObject var searchBar:SearchBar
     
     var body: some View{
             ScrollView{
                 Header()
                 Divider().padding(EdgeInsets.init(top: 5, leading: 0, bottom: 0, trailing: 0))
 
-                ForEach( self.cars.filter {
+                ForEach(self.cars.filter {
                     searchBar.text.isEmpty ||
                     $0.localizedStandardContains(searchBar.text)
                 }, id: \.self) { car in

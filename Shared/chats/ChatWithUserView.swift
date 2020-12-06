@@ -9,45 +9,81 @@ import SwiftUI
 
 struct ChatWithUserView: View {
     
-    let cars = ["Subaru WRX", "Tesla Model 3", "Porsche 911", "Renault Zoe", "DeLorean", "Mitsubishi Lancer", "Audi RS6","Subaru WRX", "Tesla Model 3", "Porsche 911", "Renault Zoe", "DeLorean", "Mitsubishi Lancer", "Audi RS6"]
+    
     
     @Environment(\.presentationMode) var presentation
     
-    @State var messageText:String = ""
+    @ObservedObject var chatViewModel = ChatViewModel()
+    
     
     let name:String
     
+    
     var body: some View {
-            VStack(alignment:.leading){
-                List{
-                    ForEach(self.cars, id: \.self) { car in
-                        Text(car)
-                    }
-                }.listStyle(PlainListStyle())
-                Spacer()
-                HStack{
-                    Image(systemName: "plus").foregroundColor(.blue).padding().imageScale(.large)
-                    TextField("Send Message..", text: $messageText).textFieldStyle(RoundedBorderTextFieldStyle())
-                    Image(systemName: "camera").foregroundColor(.blue).padding().imageScale(.large)
-                }.frame(height:44)
-            }.navigationBarBackButtonHidden(true).navigationBarItems(leading: Button(action: { presentation.wrappedValue.dismiss() }) {
-                Image(systemName: "chevron.left")
-                    .foregroundColor(.blue)
-                    .imageScale(.large)
-                Image("RandomUser")
-                    .frame(width: 30, height: 30)
-                    .clipShape(Circle())
-                    .shadow(radius: 30)
-                Text(name)
-            },trailing: HStack{
-                Image(systemName: "video")
-                    .foregroundColor(.blue)
-                    .imageScale(.large)
-                Spacer()
-                Image(systemName: "phone")
-                    .foregroundColor(.blue)
-                    .imageScale(.large)
-            }).widthHeightmatchParent()
+        VStack(alignment:.leading){
+            messagesList
+            Spacer()
+            Footer().environmentObject(chatViewModel)
+        }.navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: navigationLeading,trailing: navigationTrailing).widthHeightmatchParent()
+    }
+    
+    var messagesList: some View{
+        List{
+            ForEach(chatViewModel.messages, id: \.self) { car in
+                Text(car)
+            }
+        }.listStyle(PlainListStyle()).onAppear {
+            UITableView.appearance().backgroundColor = .clear // For tableView
+            UITableViewCell.appearance().backgroundColor = .clear // For tableViewCell
+        }.background(Image("Background"))
+    }
+    
+    var navigationLeading:some View{
+        Button(action: { presentation.wrappedValue.dismiss() }) {
+            Image(systemName: "chevron.left")
+                .foregroundColor(.blue)
+                .imageScale(.large)
+            Image("RandomUser")
+                .frame(width: 30, height: 30)
+                .clipShape(Circle())
+                .shadow(radius: 30)
+            Text(name)
+        }
+    }
+    var navigationTrailing : some View{
+        HStack{
+            Image(systemName: "video")
+                .foregroundColor(.blue)
+                .imageScale(.large)
+            Spacer()
+            Image(systemName: "phone")
+                .foregroundColor(.blue)
+                .imageScale(.large)
+        }
     }
 }
+
+
+struct Footer:View{
+    
+    @EnvironmentObject var chatViewModel:ChatViewModel
+    @State var messageText:String = ""
+
+    var body: some View{
+        HStack{
+            Image(systemName: "plus").foregroundColor(.blue).padding().imageScale(.large)
+            TextField("Send Message..", text: $messageText).textFieldStyle(RoundedBorderTextFieldStyle())
+            Button {
+                chatViewModel.messages.append(messageText)
+                messageText = ""
+            } label: {
+                Image(systemName: "paperplane").foregroundColor(.blue).padding().imageScale(.large)
+            }
+
+        }.frame(height:44)
+       .background(Color.white)
+    }
+}
+
 

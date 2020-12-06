@@ -15,6 +15,6 @@ struct SettingsThirdBlock : View{
         VStack(alignment:.leading){
             SettingsCommonListItem(imageId: "Help", text: "Help",divider: true)
             SettingsCommonListItem(imageId: "TellFriend", text: "Tell a Friend",divider: false)
-        }.background(colorScheme == .dark ? Color.black: Color.white)
+        }.background(colorScheme == .dark ? Constants.darkColor: Color.white)
     }
 }

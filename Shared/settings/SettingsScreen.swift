@@ -10,19 +10,24 @@ import SwiftUI
 
 struct SettingsScreen : View{
     
-
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View{
         ScrollView{
-            Space()
-            SettingsUserHeader()
-            Space()
-            SettingsFirstBlock()
-            Space()
-            SettingsSecondBlock()
-            Space()
-            SettingsThirdBlock()
-            Space()
-        }.listStyle(PlainListStyle())
+            LazyVStack{
+                VStack{
+                    Space()
+                    SettingsUserHeader()
+                    Space()
+                    SettingsFirstBlock()
+                    Space()
+                    SettingsSecondBlock()
+                    Space()
+                    SettingsThirdBlock()
+                    Space()
+                }.background(colorScheme == .dark ? Constants.darkColor : Color.white)
+            }
+        }
     }
 }
 

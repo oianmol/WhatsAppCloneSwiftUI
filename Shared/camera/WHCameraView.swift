@@ -13,7 +13,7 @@ struct WHCameraView:View{
         VStack{
             CameraViewController()
                 .overlay(CameraTopView()).statusBar(hidden: true)
-        }.background(Color.black)
+        }.background(Constants.darkColor)
     }
 }
 

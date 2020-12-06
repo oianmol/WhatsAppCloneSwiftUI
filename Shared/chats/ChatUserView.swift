@@ -28,7 +28,6 @@ struct ChatUserView:View{
                 Text("✓✓ Do not fail to try").foregroundColor(.gray)
             }
             Spacer()
-            Image("caraticon")
         }.widthMatchParent().padding()
     }
 }

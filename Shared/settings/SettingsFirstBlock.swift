@@ -17,6 +17,6 @@ struct SettingsFirstBlock : View{
         VStack(alignment:.leading){
             SettingsCommonListItem(imageId: "StarredMessages", text: "Starred Messages",divider: true)
             SettingsCommonListItem(imageId: "WhatsAppWeb", text: "WhatsaApp Web/Desktop",divider: false)
-        }.background(colorScheme == .dark ? Color.black: Color.white)
+        }.background(colorScheme == .dark ? Constants.darkColor: Color.white)
     }
 }

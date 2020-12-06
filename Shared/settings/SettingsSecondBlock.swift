@@ -17,6 +17,6 @@ struct SettingsSecondBlock : View{
             SettingsCommonListItem(imageId: "Chats", text: "Chats",divider: true)
             SettingsCommonListItem(imageId: "Notifications", text: "Notifications",divider: true)
             SettingsCommonListItem(imageId: "DataStorage", text: "Data and Storage Usage",divider: false)
-        }.background(colorScheme == .dark ? Color.black: Color.white)
+        }.background(colorScheme == .dark ? Constants.darkColor: Color.white)
     }
 }

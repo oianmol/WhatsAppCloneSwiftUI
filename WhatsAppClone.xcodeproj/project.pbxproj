@@ -14,6 +14,8 @@
 		8952A2B6257BC09A00B6A253 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952A29D257BBF2200B6A253 /* CameraViewController.swift */; };
 		8952A2D2257BC5A600B6A253 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952A2D1257BC5A600B6A253 /* SearchBar.swift */; };
 		8952A2D8257BC9D800B6A253 /* ViewContentResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952A2D7257BC9D800B6A253 /* ViewContentResolver.swift */; };
+		897AB200257D133E001E4ECC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897AB1FF257D133E001E4ECC /* Constants.swift */; };
+		897AB207257D1A65001E4ECC /* SUImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897AB206257D1A65001E4ECC /* SUImagePickerView.swift */; };
 		89886A01257B985E008C36B4 /* ChatWithUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89886A00257B985E008C36B4 /* ChatWithUserView.swift */; };
 		89886A02257B985E008C36B4 /* ChatWithUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89886A00257B985E008C36B4 /* ChatWithUserView.swift */; };
 		8989F6A7257B8987005152EF /* ChatUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989F6A6257B8987005152EF /* ChatUserView.swift */; };
@@ -71,6 +73,8 @@
 		8952A29D257BBF2200B6A253 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		8952A2D1257BC5A600B6A253 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		8952A2D7257BC9D800B6A253 /* ViewContentResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContentResolver.swift; sourceTree = "<group>"; };
+		897AB1FF257D133E001E4ECC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		897AB206257D1A65001E4ECC /* SUImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
 		89886A00257B985E008C36B4 /* ChatWithUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWithUserView.swift; sourceTree = "<group>"; };
 		8989F6A6257B8987005152EF /* ChatUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserView.swift; sourceTree = "<group>"; };
 		89B75411257CE3020075785C /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
@@ -165,6 +169,22 @@
 			path = search;
 			sourceTree = "<group>";
 		};
+		897AB1FE257D1334001E4ECC /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				897AB1FF257D133E001E4ECC /* Constants.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		897AB205257D1A52001E4ECC /* ImagePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				897AB206257D1A65001E4ECC /* SUImagePickerView.swift */,
+			);
+			path = ImagePickerView;
+			sourceTree = "<group>";
+		};
 		89BC5E54257B433D0061D614 = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +202,8 @@
 		89BC5E59257B433D0061D614 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				897AB205257D1A52001E4ECC /* ImagePickerView */,
+				897AB1FE257D1334001E4ECC /* utils */,
 				8952A2D0257BC59A00B6A253 /* search */,
 				89BC5EEA257B6CE70061D614 /* camera */,
 				89BC5F17257B7CD20061D614 /* chats */,
@@ -486,6 +508,7 @@
 				89BC5EEC257B6CEE0061D614 /* WHCameraView.swift in Sources */,
 				89BC5F19257B7CDB0061D614 /* ChatsScreen.swift in Sources */,
 				8952A2D2257BC5A600B6A253 /* SearchBar.swift in Sources */,
+				897AB207257D1A65001E4ECC /* SUImagePickerView.swift in Sources */,
 				8952A2B4257BC09A00B6A253 /* CameraController.swift in Sources */,
 				89BC5EB9257B55780061D614 /* SettingsUserHeader.swift in Sources */,
 				8989F6A7257B8987005152EF /* ChatUserView.swift in Sources */,
@@ -500,6 +523,7 @@
 				89BC5ECF257B64E50061D614 /* SettingsSecondBlock.swift in Sources */,
 				89BC5ED6257B651B0061D614 /* SettingsCommonListItem.swift in Sources */,
 				89BC5EA6257B47A40061D614 /* HomeScreen.swift in Sources */,
+				897AB200257D133E001E4ECC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

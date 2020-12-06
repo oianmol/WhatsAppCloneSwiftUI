@@ -14,23 +14,27 @@ struct ChatsScreen : View{
     
 
     @ObservedObject var searchBar:SearchBar
-    
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some View{
             ScrollView{
-                Header()
-                Divider().padding(EdgeInsets.init(top: 5, leading: 0, bottom: 0, trailing: 0))
+                VStack{
+                    Header()
+                    Divider().padding(EdgeInsets.init(top: 5, leading: 0, bottom: 0, trailing: 0))
 
-                ForEach(self.cars.filter {
-                    searchBar.text.isEmpty ||
-                    $0.localizedStandardContains(searchBar.text)
-                }, id: \.self) { car in
-                    NavigationLink(destination: ChatWithUserView(name:car)){
-                        VStack{
-                            ChatUserView(name:car)
-                            Divider().padding(EdgeInsets.init(top: 5, leading: 15, bottom: 0, trailing: 0))
+                    ForEach(self.cars.filter {
+                        searchBar.text.isEmpty ||
+                        $0.localizedStandardContains(searchBar.text)
+                    }, id: \.self) { car in
+                        NavigationLink(destination: ChatWithUserView(name:car)){
+                            VStack{
+                                ChatUserView(name:car)
+                                Divider().padding(EdgeInsets.init(top: 5, leading: 15, bottom: 0, trailing: 0))
+                            }
                         }
                     }
-                }
+                }.background(colorScheme == .dark ? Constants.darkColor : Color.white)
+                
             }
             .resignKeyboardOnDragGesture()
     }

@@ -29,14 +29,24 @@ struct ChatWithUserView: View {
     }
     
     var messagesList: some View{
-        List{
-            ForEach(chatViewModel.messages, id: \.self) { car in
-                Text(car)
+        ScrollView{
+            LazyVStack{
+                ForEach(chatViewModel.messages, id: \.self) { car in
+                    HStack(alignment: .bottom) {
+                        Spacer()
+                        Text(car).padding(10)
+                            .foregroundColor(Color.white)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                        Image("RandomUser")
+                            .resizable()
+                            .frame(width: 20, height: 20, alignment: .center)
+                            .cornerRadius(10).padding(.trailing, 10)
+                    }.widthMatchParent()
+                    
+                }
             }
-        }.listStyle(PlainListStyle()).onAppear {
-            UITableView.appearance().backgroundColor = .clear // For tableView
-            UITableViewCell.appearance().backgroundColor = .clear // For tableViewCell
-        }.background(Image("Background"))
+        }.resignKeyboardOnDragGesture().background(Image("Background"))
     }
     
     var navigationLeading:some View{
@@ -69,7 +79,7 @@ struct Footer:View{
     
     @EnvironmentObject var chatViewModel:ChatViewModel
     @State var messageText:String = ""
-
+    
     var body: some View{
         HStack{
             Image(systemName: "plus").foregroundColor(.blue).padding().imageScale(.large)
@@ -80,9 +90,9 @@ struct Footer:View{
             } label: {
                 Image(systemName: "paperplane").foregroundColor(.blue).padding().imageScale(.large)
             }
-
+            
         }.frame(height:44)
-       .background(Color.white)
+        .background(Color.white)
     }
 }
 

@@ -31,6 +31,8 @@
 	<true/>
 	<key>UILaunchScreen</key>
 	<dict>
+		<key>UIColorName</key>
+		<string>LaunchScreenBackground</string>
 		<key>UIImageName</key>
 		<string>Chats</string>
 	</dict>

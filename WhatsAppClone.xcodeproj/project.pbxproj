@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,7 @@
 		8989F6A8257B8987005152EF /* ChatUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989F6A6257B8987005152EF /* ChatUserView.swift */; };
 		89B75412257CE3020075785C /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B75411257CE3020075785C /* ChatViewModel.swift */; };
 		89B75413257CE3020075785C /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B75411257CE3020075785C /* ChatViewModel.swift */; };
+		89B7A426257E1F2800076836 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 89B7A425257E1F2800076836 /* Introspect */; };
 		89BC5E76257B433D0061D614 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5E75257B433D0061D614 /* Tests_iOS.swift */; };
 		89BC5E81257B433D0061D614 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5E80257B433D0061D614 /* Tests_macOS.swift */; };
 		89BC5E83257B433D0061D614 /* WhatsAppCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5E5A257B433D0061D614 /* WhatsAppCloneApp.swift */; };
@@ -113,6 +114,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D7590D9469F987DF3D6C4F4 /* Pods_WhatsAppClone__iOS_.framework in Frameworks */,
+				89B7A426257E1F2800076836 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +317,7 @@
 			);
 			name = "WhatsAppClone (iOS)";
 			packageProductDependencies = (
+				89B7A425257E1F2800076836 /* Introspect */,
 			);
 			productName = "WhatsAppClone (iOS)";
 			productReference = 89BC5E61257B433D0061D614 /* WhatsAppClone.app */;
@@ -409,6 +412,7 @@
 			);
 			mainGroup = 89BC5E54257B433D0061D614;
 			packageReferences = (
+				89B7A424257E1F2800076836 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = 89BC5E62257B433D0061D614 /* Products */;
 			projectDirPath = "";
@@ -933,6 +937,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		89B7A424257E1F2800076836 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		89B7A425257E1F2800076836 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89B7A424257E1F2800076836 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 89BC5E55257B433D0061D614 /* Project object */;
 }

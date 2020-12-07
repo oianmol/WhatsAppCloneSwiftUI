@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import Introspect
 
 struct ChatWithUserView: View {
     
     @Environment(\.presentationMode) var presentation
     @Environment(\.colorScheme) var colorScheme
     
-    
+    @State var tableView: UIScrollView?
+    @State var yOffset: CGFloat?
+
     @ObservedObject var chatViewModel = ChatViewModel()
     
     
@@ -22,11 +25,11 @@ struct ChatWithUserView: View {
     var body: some View {
         NavigationView {
             
-           let body = VStack(alignment:.leading){
+            let body = VStack(alignment:.leading){
                 messagesList
                 Spacer()
                 Section{
-                    Footer().environmentObject(chatViewModel)
+                    Footer(tableView:$tableView, yOffset:$yOffset).environmentObject(chatViewModel)
                 }
             }
             .navigationBarItems(leading: navigationLeading,trailing: navigationTrailing)
@@ -35,7 +38,7 @@ struct ChatWithUserView: View {
                 body
             }else{
                 body.background(Image("Background").resizable().scaledToFill())
-            } 
+            }
         }.navigationBarHidden(true)
         
     }
@@ -68,7 +71,18 @@ struct ChatWithUserView: View {
                 
             }
             
-        }.resignKeyboardOnTapGesture()
+        }.introspectScrollView(customize: { tableView in
+            if self.tableView == nil {
+                self.tableView = tableView
+            } else {
+                
+                guard let yOffset = self.yOffset
+                else { return }
+                
+                self.tableView?.setContentOffset(CGPoint(x: 0, y: yOffset + 50), animated: true)
+                self.tableView?.scrollToBottom(animated: true,yOffset: $yOffset)
+            }
+        }).resignKeyboardOnTapGesture()
         
     }
     
@@ -140,6 +154,8 @@ struct UserTextMessage: View{
 
 struct Footer: View{
     
+    let tableView:Binding<UIScrollView?>
+    let yOffset: Binding<CGFloat?>
     @EnvironmentObject var chatViewModel:ChatViewModel
     @State var messageText:String = ""
     @Environment(\.colorScheme) var colorScheme
@@ -184,6 +200,7 @@ struct Footer: View{
                 }
                 chatViewModel.addChatMessage(chatMessage: ChatMessage(message: messageText, image: nil,myMessage:true))
                 messageText = ""
+                tableView.wrappedValue?.scrollToBottom(animated: true,yOffset: yOffset)
             } label: {
                 Image(systemName: "paperplane").foregroundColor(.blue).padding().imageScale(.large)
             }
@@ -194,3 +211,14 @@ struct Footer: View{
 }
 
 
+extension UIScrollView {
+
+    func scrollToBottom(animated: Bool,
+                        yOffset: Binding<CGFloat?>) {
+
+        let y = contentSize.height - frame.size.height
+        if y < 0 { return }
+
+        yOffset.wrappedValue = y
+    }
+}

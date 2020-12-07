@@ -9,13 +9,10 @@ import SwiftUI
 
 struct ChatWithUserView: View {
     
-    
-    
     @Environment(\.presentationMode) var presentation
     @Environment(\.colorScheme) var colorScheme
     
 
-    
     @ObservedObject var chatViewModel = ChatViewModel()
     
     
@@ -23,12 +20,16 @@ struct ChatWithUserView: View {
     
     
     var body: some View {
-        VStack(alignment:.leading){
-            messagesList
-            Spacer()
-            Footer().environmentObject(chatViewModel)
-        }.navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: navigationLeading,trailing: navigationTrailing).widthHeightmatchParent()
+        NavigationView{
+            VStack(alignment:.leading){
+                messagesList
+                Spacer()
+                Footer().environmentObject(chatViewModel)
+            }
+            .navigationBarItems(leading: navigationLeading,trailing: navigationTrailing)
+            .widthHeightmatchParent()
+        }.navigationBarHidden(true)
+      
     }
     
     var messagesList: some View{
@@ -59,19 +60,19 @@ struct ChatWithUserView: View {
                                 .cornerRadius(10).padding(.trailing, 10)
                         }
                     
-                    }.widthMatchParent()
+                    }.padding(4).widthMatchParent()
                     
                 }
             }
         }.resignKeyboardOnDragGesture()
-        .background(colorScheme == .dark ? Constants.darkColor : Color.white)
+        
     }
     
     var navigationLeading:some View{
         Button(action: { presentation.wrappedValue.dismiss() }) {
             Image(systemName: "chevron.left")
-                .foregroundColor(.blue)
-                .imageScale(.large)
+                          .foregroundColor(.blue)
+                          .imageScale(.large)
             Image("RandomUser")
                 .frame(width: 30, height: 30)
                 .clipShape(Circle())
@@ -130,7 +131,7 @@ struct Footer: View{
                 }
             }
 
-            TextEditor(text: $messageText).textFieldStyle(RoundedBorderTextFieldStyle())
+            TextEditor(text: $messageText)
 
             Button {
                 if(messageText.isEmpty){
@@ -143,7 +144,7 @@ struct Footer: View{
             }
             
         }.frame(height:44)
-        .background(colorScheme == .dark ? Constants.darkColor : Color.white)
+        
     }
 }
 

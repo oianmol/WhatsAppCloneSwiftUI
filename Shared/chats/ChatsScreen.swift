@@ -50,7 +50,7 @@ struct Header:View{
             Button("New Group", action: {
                 
             }).foregroundColor(.blue)
-        }.padding(EdgeInsets.init(top: 0, leading: 10, bottom: 0, trailing: 10))
+        }.padding(EdgeInsets.init(top: 10, leading: 10, bottom: 0, trailing: 10))
     }
 }
 

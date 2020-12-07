@@ -11,7 +11,7 @@ import SwiftUI
 struct HomeScreen : View{
     @State private var selected = 3
     @ObservedObject var searchBar: SearchBar = SearchBar()
-
+    @State private var chatsNavTitle = "Chats"
     var body: some View {
         let view = NavigationTabs(selected: self.$selected,searchBar:searchBar)
      

@@ -12,7 +12,7 @@ struct ChatWithUserView: View {
     @Environment(\.presentationMode) var presentation
     @Environment(\.colorScheme) var colorScheme
     
-
+    
     @ObservedObject var chatViewModel = ChatViewModel()
     
     
@@ -20,59 +20,63 @@ struct ChatWithUserView: View {
     
     
     var body: some View {
-        NavigationView{
-            VStack(alignment:.leading){
+        NavigationView {
+            
+           let body = VStack(alignment:.leading){
                 messagesList
                 Spacer()
-                Footer().environmentObject(chatViewModel)
+                Section{
+                    Footer().environmentObject(chatViewModel)
+                }
             }
             .navigationBarItems(leading: navigationLeading,trailing: navigationTrailing)
             .widthHeightmatchParent()
+            if(colorScheme == .dark){
+                body
+            }else{
+                body.background(Image("Background").resizable().scaledToFill())
+            } 
         }.navigationBarHidden(true)
-      
+        
     }
     
     var messagesList: some View{
         ScrollView{
-            LazyVStack{
-                ForEach(chatViewModel.messages, id: \.self) { car in
-                    HStack(alignment: .bottom) {
+            ForEach(chatViewModel.messages, id: \.self) { message in
+                HStack(alignment: .bottom) {
+                    if(message.myMessage == true){
                         Spacer()
-                        if(car.message != nil){
-                            Text(car.message!).padding(10)
-                                .foregroundColor(Color.white)
-                                .background(Color.blue)
-                                .cornerRadius(10)
-                            Image("RandomUser")
-                                .resizable()
-                                .frame(width: 20, height: 20, alignment: .center)
-                                .cornerRadius(10).padding(.trailing, 10)
+                        if(message.message != nil){
+                            UserTextMessage(chatMesage:message)
+                            UserImage()
                         }else{
-                            VStack{
-                                Image(uiImage: car.image!)
-                                    .resizable().frame(width:150,height:150)
-                            
-                            }.background(Color.blue)
-                            .cornerRadius(25)
-                            Image("RandomUser")
-                                .resizable()
-                                .frame(width: 30, height: 30, alignment: .center)
-                                .cornerRadius(10).padding(.trailing, 10)
+                            PictureImage(chatMesage:message)
+                            UserImage()
                         }
+                    }else{
+                        if(message.message != nil){
+                            UserImage()
+                            UserTextMessage(chatMesage:message)
+                        }else{
+                            UserImage()
+                            PictureImage(chatMesage:message)
+                        }
+                        Spacer()
+                    }
                     
-                    }.padding(4).widthMatchParent()
-                    
-                }
+                }.padding(4).widthMatchParent().id(message.hashValue)
+                
             }
-        }.resignKeyboardOnDragGesture()
+            
+        }.resignKeyboardOnTapGesture()
         
     }
     
     var navigationLeading:some View{
         Button(action: { presentation.wrappedValue.dismiss() }) {
             Image(systemName: "chevron.left")
-                          .foregroundColor(.blue)
-                          .imageScale(.large)
+                .foregroundColor(.blue)
+                .imageScale(.large)
             Image("RandomUser")
                 .frame(width: 30, height: 30)
                 .clipShape(Circle())
@@ -82,14 +86,54 @@ struct ChatWithUserView: View {
     }
     var navigationTrailing : some View{
         HStack{
-            Image(systemName: "video")
-                .foregroundColor(.blue)
-                .imageScale(.large)
+            Button(action: {
+                
+            }, label: {
+                Image(systemName: "video")
+                    .foregroundColor(.blue)
+                    .imageScale(.large)
+            })
             Spacer()
-            Image(systemName: "phone")
-                .foregroundColor(.blue)
-                .imageScale(.large)
+            Button(action: {}, label: {
+                Image(systemName: "phone")
+                    .foregroundColor(.blue)
+                    .imageScale(.large)
+            })
         }
+    }
+}
+
+struct UserImage : View{
+    var body: some View{
+        Image("RandomUser")
+            .resizable()
+            .frame(width: 20, height: 20, alignment: .center)
+            .cornerRadius(10).padding(.trailing, 10)
+    }
+}
+
+struct PictureImage:View{
+    let chatMesage:ChatMessage
+    
+    var body: some View{
+        VStack{
+            Image(uiImage: chatMesage.image!)
+                .resizable().frame(width:150,height:150)
+            
+        }.background(Color.blue)
+        .cornerRadius(25)
+    }
+}
+
+struct UserTextMessage: View{
+    
+    let chatMesage:ChatMessage
+    
+    var body: some View{
+        Text(chatMesage.message!).padding(10)
+            .foregroundColor(Color.white)
+            .background(Color.blue)
+            .cornerRadius(10)
     }
 }
 
@@ -99,7 +143,7 @@ struct Footer: View{
     @EnvironmentObject var chatViewModel:ChatViewModel
     @State var messageText:String = ""
     @Environment(\.colorScheme) var colorScheme
-
+    
     @State private var shouldPresentImagePicker = false
     @State private var shouldPresentActionScheet = false
     @State private var shouldPresentCamera = false
@@ -117,33 +161,34 @@ struct Footer: View{
                     .onTapGesture { self.shouldPresentActionScheet = true }
                     .sheet(isPresented: $shouldPresentImagePicker) {
                         SUImagePickerView(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary,isPresented: self.$shouldPresentImagePicker, callback: { image in
-                            chatViewModel.messages.append(ChatMessage(message: nil, image: image))
-
+                            chatViewModel.addChatMessage(chatMessage: ChatMessage(message: nil, image: image,myMessage:true))
                         })
-                }.actionSheet(isPresented: $shouldPresentActionScheet) { () -> ActionSheet in
-                    ActionSheet(title: Text("Choose mode"), message: Text("Please choose your preferred mode to set your profile image"), buttons: [ActionSheet.Button.default(Text("Camera"), action: {
-                        self.shouldPresentImagePicker = true
-                        self.shouldPresentCamera = true
-                    }), ActionSheet.Button.default(Text("Photo Library"), action: {
-                        self.shouldPresentImagePicker = true
-                        self.shouldPresentCamera = false
-                    }), ActionSheet.Button.cancel()])
-                }
+                    }.actionSheet(isPresented: $shouldPresentActionScheet) { () -> ActionSheet in
+                        ActionSheet(title: Text("Choose mode"), message: Text("Please choose your preferred mode to set your profile image"), buttons: [ActionSheet.Button.default(Text("Camera"), action: {
+                            self.shouldPresentImagePicker = true
+                            self.shouldPresentCamera = true
+                        }), ActionSheet.Button.default(Text("Photo Library"), action: {
+                            self.shouldPresentImagePicker = true
+                            self.shouldPresentCamera = false
+                        }), ActionSheet.Button.cancel()])
+                    }
             }
-
-            TextEditor(text: $messageText)
-
+            
+            TextField("",text: $messageText)
+                .autocapitalization(.none)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
             Button {
                 if(messageText.isEmpty){
                     return
                 }
-                chatViewModel.messages.append(ChatMessage(message: messageText, image: nil))
+                chatViewModel.addChatMessage(chatMessage: ChatMessage(message: messageText, image: nil,myMessage:true))
                 messageText = ""
             } label: {
                 Image(systemName: "paperplane").foregroundColor(.blue).padding().imageScale(.large)
             }
             
-        }.frame(height:44)
+        }.frame(height:44).background(colorScheme == .dark ? Constants.darkColor : Color.white)
         
     }
 }

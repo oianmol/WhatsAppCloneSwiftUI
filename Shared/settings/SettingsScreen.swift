@@ -17,13 +17,22 @@ struct SettingsScreen : View{
             LazyVStack{
                 VStack{
                     Space()
-                    SettingsUserHeader()
+                    Section{
+                        SettingsUserHeader()
+                    }
+                    
                     Space()
-                    SettingsFirstBlock()
+                    Section{
+                        SettingsFirstBlock()
+                    }
                     Space()
-                    SettingsSecondBlock()
+                    Section{
+                        SettingsSecondBlock()
+                    }
                     Space()
-                    SettingsThirdBlock()
+                    Section{
+                        SettingsThirdBlock()
+                    }
                     Space()
                 }.background(colorScheme == .dark ? Constants.darkColor : Color.white)
             }

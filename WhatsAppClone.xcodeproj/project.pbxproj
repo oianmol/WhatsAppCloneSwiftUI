@@ -78,6 +78,7 @@
 		89886A00257B985E008C36B4 /* ChatWithUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWithUserView.swift; sourceTree = "<group>"; };
 		8989F6A6257B8987005152EF /* ChatUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserView.swift; sourceTree = "<group>"; };
 		89B75411257CE3020075785C /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		89B7A41B257DDDDE00076836 /* WhatsAppClone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhatsAppClone.entitlements; sourceTree = "<group>"; };
 		89BC5E5A257B433D0061D614 /* WhatsAppCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsAppCloneApp.swift; sourceTree = "<group>"; };
 		89BC5E5C257B433D0061D614 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89BC5E61257B433D0061D614 /* WhatsAppClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAppClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,7 +173,6 @@
 		897AB1FE257D1334001E4ECC /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				897AB1FF257D133E001E4ECC /* Constants.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -188,6 +188,7 @@
 		89BC5E54257B433D0061D614 = {
 			isa = PBXGroup;
 			children = (
+				89B7A41B257DDDDE00076836 /* WhatsAppClone.entitlements */,
 				89BC5E59257B433D0061D614 /* Shared */,
 				89BC5E63257B433D0061D614 /* iOS */,
 				89BC5E6A257B433D0061D614 /* macOS */,
@@ -202,6 +203,7 @@
 		89BC5E59257B433D0061D614 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				897AB1FF257D133E001E4ECC /* Constants.swift */,
 				897AB205257D1A52001E4ECC /* ImagePickerView */,
 				897AB1FE257D1334001E4ECC /* utils */,
 				8952A2D0257BC59A00B6A253 /* search */,
@@ -698,6 +700,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WhatsAppClone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P3R865242N;
 				ENABLE_PREVIEWS = YES;
@@ -710,6 +713,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mutualmobile.WhatsAppClone;
 				PRODUCT_NAME = WhatsAppClone;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -721,6 +725,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WhatsAppClone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P3R865242N;
 				ENABLE_PREVIEWS = YES;
@@ -733,6 +738,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mutualmobile.WhatsAppClone;
 				PRODUCT_NAME = WhatsAppClone;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

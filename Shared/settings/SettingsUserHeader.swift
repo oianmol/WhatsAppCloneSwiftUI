@@ -28,5 +28,6 @@ struct SettingsUserHeader : View{
                 Image("caraticon")
             }.widthMatchParent().padding()
         }.background(colorScheme == .dark ? Constants.darkColor: Color.white)
+        .ignoresSafeArea()
     }
 }

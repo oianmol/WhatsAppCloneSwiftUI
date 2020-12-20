@@ -6,6 +6,8 @@ target 'WhatsAppClone (iOS)' do
   use_frameworks!
 
   # Pods for WhatsAppClone (iOS)
+  pod 'gRPC-Swift', '~> 1.0.0-alpha.20'
+  pod 'gRPC-Swift-Plugins', '~> 1.0.0-alpha.20'
 
 end
 
@@ -14,5 +16,6 @@ target 'WhatsAppClone (macOS)' do
   use_frameworks!
 
   # Pods for WhatsAppClone (macOS)
-
+  pod 'gRPC-Swift', '~> 1.0.0-alpha.20'
+  pod 'gRPC-Swift-Plugins', '~> 1.0.0-alpha.20'
 end

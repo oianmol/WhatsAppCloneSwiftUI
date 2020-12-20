@@ -24,6 +24,8 @@
 		89886A02257B985E008C36B4 /* ChatWithUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89886A00257B985E008C36B4 /* ChatWithUserView.swift */; };
 		8989F6A7257B8987005152EF /* ChatUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989F6A6257B8987005152EF /* ChatUserView.swift */; };
 		8989F6A8257B8987005152EF /* ChatUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989F6A6257B8987005152EF /* ChatUserView.swift */; };
+		8993C24D258F3CE700E97B73 /* AuthServiceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8993C24C258F3CE700E97B73 /* AuthServiceStore.swift */; };
+		8993C256258F3D8F00E97B73 /* AuthService.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EE5F9A258E61BA00015350 /* AuthService.grpc.swift */; };
 		89B75412257CE3020075785C /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B75411257CE3020075785C /* ChatViewModel.swift */; };
 		89B75413257CE3020075785C /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B75411257CE3020075785C /* ChatViewModel.swift */; };
 		89B7A426257E1F2800076836 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 89B7A425257E1F2800076836 /* Introspect */; };
@@ -51,6 +53,10 @@
 		89BC5EED257B6CEE0061D614 /* WHCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5EEB257B6CEE0061D614 /* WHCameraView.swift */; };
 		89BC5F19257B7CDB0061D614 /* ChatsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */; };
 		89BC5F1A257B7CDB0061D614 /* ChatsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */; };
+		89EE5F9D258E61BA00015350 /* AuthService.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EE5F9A258E61BA00015350 /* AuthService.grpc.swift */; };
+		89EE5F9E258E61BA00015350 /* AuthService.proto in Sources */ = {isa = PBXBuildFile; fileRef = 89EE5F9B258E61BA00015350 /* AuthService.proto */; };
+		89EE5F9F258E61BA00015350 /* AuthService.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EE5F9C258E61BA00015350 /* AuthService.pb.swift */; };
+		89EE5FA6258E620600015350 /* PhoneAuthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EE5FA5258E620600015350 /* PhoneAuthScreen.swift */; };
 		BCF8C78D010A5520778B8E1B /* Pods_WhatsAppClone__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF18A8BB1D31FD09947FD9E3 /* Pods_WhatsAppClone__macOS_.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +90,7 @@
 		897AB206257D1A65001E4ECC /* SUImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
 		89886A00257B985E008C36B4 /* ChatWithUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWithUserView.swift; sourceTree = "<group>"; };
 		8989F6A6257B8987005152EF /* ChatUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserView.swift; sourceTree = "<group>"; };
+		8993C24C258F3CE700E97B73 /* AuthServiceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceStore.swift; sourceTree = "<group>"; };
 		89B75411257CE3020075785C /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		89B7A41B257DDDDE00076836 /* WhatsAppClone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhatsAppClone.entitlements; sourceTree = "<group>"; };
 		89BC5E5A257B433D0061D614 /* WhatsAppCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsAppCloneApp.swift; sourceTree = "<group>"; };
@@ -108,6 +115,10 @@
 		89BC5EDC257B65DC0061D614 /* SettingsThirdBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsThirdBlock.swift; sourceTree = "<group>"; };
 		89BC5EEB257B6CEE0061D614 /* WHCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHCameraView.swift; sourceTree = "<group>"; };
 		89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsScreen.swift; sourceTree = "<group>"; };
+		89EE5F9A258E61BA00015350 /* AuthService.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.grpc.swift; sourceTree = "<group>"; };
+		89EE5F9B258E61BA00015350 /* AuthService.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = AuthService.proto; sourceTree = "<group>"; };
+		89EE5F9C258E61BA00015350 /* AuthService.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.pb.swift; sourceTree = "<group>"; };
+		89EE5FA5258E620600015350 /* PhoneAuthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthScreen.swift; sourceTree = "<group>"; };
 		8FACAAEBFB3D904FE02BEC06 /* Pods-WhatsAppClone (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppClone (iOS).release.xcconfig"; path = "Target Support Files/Pods-WhatsAppClone (iOS)/Pods-WhatsAppClone (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		AF18A8BB1D31FD09947FD9E3 /* Pods_WhatsAppClone__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsAppClone__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10073A167FAD9CF252FA917 /* Pods_WhatsAppClone__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsAppClone__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +223,8 @@
 		89BC5E59257B433D0061D614 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				89EE5FA4258E61F300015350 /* auth */,
+				89EE5F98258E614A00015350 /* protos */,
 				897AB1FF257D133E001E4ECC /* Constants.swift */,
 				897AB205257D1A52001E4ECC /* ImagePickerView */,
 				897AB1FE257D1334001E4ECC /* utils */,
@@ -307,6 +320,33 @@
 			path = chats;
 			sourceTree = "<group>";
 		};
+		89EE5F98258E614A00015350 /* protos */ = {
+			isa = PBXGroup;
+			children = (
+				89EE5F99258E615D00015350 /* auth */,
+			);
+			path = protos;
+			sourceTree = "<group>";
+		};
+		89EE5F99258E615D00015350 /* auth */ = {
+			isa = PBXGroup;
+			children = (
+				89EE5F9A258E61BA00015350 /* AuthService.grpc.swift */,
+				89EE5F9C258E61BA00015350 /* AuthService.pb.swift */,
+				89EE5F9B258E61BA00015350 /* AuthService.proto */,
+			);
+			path = auth;
+			sourceTree = "<group>";
+		};
+		89EE5FA4258E61F300015350 /* auth */ = {
+			isa = PBXGroup;
+			children = (
+				89EE5FA5258E620600015350 /* PhoneAuthScreen.swift */,
+				8993C24C258F3CE700E97B73 /* AuthServiceStore.swift */,
+			);
+			path = auth;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -318,6 +358,7 @@
 				89BC5E5D257B433D0061D614 /* Sources */,
 				89BC5E5E257B433D0061D614 /* Frameworks */,
 				89BC5E5F257B433D0061D614 /* Resources */,
+				7B2BC65B249B414EF6579DD5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,6 +380,7 @@
 				89BC5E65257B433D0061D614 /* Sources */,
 				89BC5E66257B433D0061D614 /* Frameworks */,
 				89BC5E67257B433D0061D614 /* Resources */,
+				36806989D5D7DD67060FCCE9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -468,6 +510,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		36806989D5D7DD67060FCCE9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhatsAppClone (macOS)/Pods-WhatsAppClone (macOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhatsAppClone (macOS)/Pods-WhatsAppClone (macOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhatsAppClone (macOS)/Pods-WhatsAppClone (macOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B2BC65B249B414EF6579DD5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhatsAppClone (iOS)/Pods-WhatsAppClone (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhatsAppClone (iOS)/Pods-WhatsAppClone (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhatsAppClone (iOS)/Pods-WhatsAppClone (iOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7CCB54C3A9C5D58D08E012E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -522,6 +598,7 @@
 				89BC5EEC257B6CEE0061D614 /* WHCameraView.swift in Sources */,
 				8956282F258B636B0087B4B1 /* ChatFooterView.swift in Sources */,
 				89BC5F19257B7CDB0061D614 /* ChatsScreen.swift in Sources */,
+				8993C24D258F3CE700E97B73 /* AuthServiceStore.swift in Sources */,
 				8952A2D2257BC5A600B6A253 /* SearchBar.swift in Sources */,
 				897AB207257D1A65001E4ECC /* SUImagePickerView.swift in Sources */,
 				8952A2B4257BC09A00B6A253 /* CameraController.swift in Sources */,
@@ -531,12 +608,16 @@
 				89B75412257CE3020075785C /* ChatViewModel.swift in Sources */,
 				89BC5E83257B433D0061D614 /* WhatsAppCloneApp.swift in Sources */,
 				89BC5EDD257B65DC0061D614 /* SettingsThirdBlock.swift in Sources */,
+				89EE5F9D258E61BA00015350 /* AuthService.grpc.swift in Sources */,
 				89BC5EB1257B542F0061D614 /* SettingsScreen.swift in Sources */,
 				89886A01257B985E008C36B4 /* ChatWithUserView.swift in Sources */,
 				89BC5EC4257B617B0061D614 /* SettingsFirstBlock.swift in Sources */,
+				89EE5F9E258E61BA00015350 /* AuthService.proto in Sources */,
 				8952A2B6257BC09A00B6A253 /* CameraViewController.swift in Sources */,
+				89EE5F9F258E61BA00015350 /* AuthService.pb.swift in Sources */,
 				8952A2D8257BC9D800B6A253 /* ViewContentResolver.swift in Sources */,
 				89BC5ECF257B64E50061D614 /* SettingsSecondBlock.swift in Sources */,
+				89EE5FA6258E620600015350 /* PhoneAuthScreen.swift in Sources */,
 				89BC5ED6257B651B0061D614 /* SettingsCommonListItem.swift in Sources */,
 				89BC5EA6257B47A40061D614 /* HomeScreen.swift in Sources */,
 				897AB200257D133E001E4ECC /* Constants.swift in Sources */,
@@ -557,6 +638,7 @@
 				89886A02257B985E008C36B4 /* ChatWithUserView.swift in Sources */,
 				89BC5EC5257B617B0061D614 /* SettingsFirstBlock.swift in Sources */,
 				89562830258B636B0087B4B1 /* ChatFooterView.swift in Sources */,
+				8993C256258F3D8F00E97B73 /* AuthService.grpc.swift in Sources */,
 				89BC5ED0257B64E50061D614 /* SettingsSecondBlock.swift in Sources */,
 				89BC5ED7257B651B0061D614 /* SettingsCommonListItem.swift in Sources */,
 				8952A2B5257BC09A00B6A253 /* CameraViewController.swift in Sources */,

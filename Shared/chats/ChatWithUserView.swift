@@ -34,7 +34,7 @@ struct ChatWithUserView: View {
                   messagesList
                   Spacer()
                   Footer(tableView:$tableView, yOffset:$yOffset).environmentObject(chatViewModel)
-              }.background(Image("Background").resizable().widthHeightmatchParent()).resignKeyboardOnTapGesture()
+            }.background(Constants.lightDarkColor(colorScheme: colorScheme)).resignKeyboardOnTapGesture()
             
               .navigationBarItems(leading: navigationLeading,
                                   trailing:navigationTrailing)
@@ -159,9 +159,6 @@ struct UserTextMessage: View{
             .cornerRadius(10)
     }
 }
-
-
-
 
 
 extension UIScrollView {

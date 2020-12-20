@@ -74,7 +74,7 @@ struct NavigationTabs:View{
 
     var body: some View{
         TabView(selection: $selected){
-            Text("Status").tabItem {
+            PhoneAuthScreen().tabItem {
                 Image(self.selected == 0 ? "StatusSelected":"StatusNormal")
                 Text("Status")
             }.tag(0)

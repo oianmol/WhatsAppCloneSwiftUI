@@ -7,11 +7,12 @@
 
 import Foundation
 import SwiftUI
+import KeychainSwift
 
 struct SettingsScreen : View{
     
     @Environment(\.colorScheme) var colorScheme
-    
+
     var body: some View{
         NavigationView{
             ScrollView{

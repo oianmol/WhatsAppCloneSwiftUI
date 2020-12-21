@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import KeychainSwift
 
 @main
 struct WhatsAppCloneApp: App {
+   @ObservedObject var authStore = AuthServiceStore()
+
     var body: some Scene {
         WindowGroup {
-            HomeScreen()
+            if(authStore.isLoggedIn()){
+                HomeScreen().environmentObject(authStore)
+            }else{
+                PhoneAuthScreen().environmentObject(authStore)
+            }
         }
     }
 }

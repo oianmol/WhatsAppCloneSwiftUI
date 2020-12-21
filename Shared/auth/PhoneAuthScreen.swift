@@ -8,12 +8,13 @@
 import Foundation
 import SwiftUI
 import CountryPickerView
+import KeychainSwift
 
 struct PhoneAuthScreen : View{
     
     @State var result :String = "Not init yet!"
     @State var phone:String = ""
-    let authStore = AuthServiceStore()
+    @EnvironmentObject var authStore: AuthServiceStore
     @State private var showingAlert = false
     @State private var otp = ""
     @State private var otpSent = false
@@ -66,6 +67,7 @@ struct PhoneAuthScreen : View{
             DispatchQueue.main.async {
                 if let response = authNow?.0?.message {
                     if(authNow!.0!.code == 200){
+                        authStore.setLoggedIn(authResponse: authNow!.0!)
                         otpVerified = true
                     }
                     result = response

@@ -38,7 +38,7 @@ struct HomeScreen : View{
                 Image(self.selected == 4 ? "settings.selected":"settings.normal")
                 Text("Settings")
             }.tag(4)
-        }
+        }.navigationBarHidden(true)
     }
     
     

@@ -26,7 +26,7 @@ struct PhoneAuthScreen : View{
                 Text(result)
                 HStack{
                     if(otpSent){
-                        TextField("Enter OTP",text:$otp).keyboardType(.numberPad)
+                        TextField("Enter OTP",text:$otp).keyboardType(.numberPad).padding()
                     }else{
                         CountryPickerCustom().padding()
                         TextField("Enter Phone",text:$phone).keyboardType(.numberPad)

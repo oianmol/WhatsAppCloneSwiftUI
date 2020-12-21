@@ -14,7 +14,6 @@ struct SettingsScreen : View{
     @Environment(\.colorScheme) var colorScheme
 
     var body: some View{
-        NavigationView{
             ScrollView{
                 LazyVStack{
                     VStack{
@@ -38,12 +37,7 @@ struct SettingsScreen : View{
                         Space()
                     }.background(colorScheme == .dark ? Constants.darkColor : Color.white)
                 }
-            }.navigationBarItems(leading: Button("Privacy"){
-                
-            },trailing:Button(action: {}){
-                
-            }).navigationTitle("Settings")
-        }
+            }
     }
 }
 

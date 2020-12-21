@@ -53,6 +53,6 @@ struct CameraTopView: View {
                 Image("camera.rotate").padding()
             }
             
-        }
+        }.navigationBarHidden(true)
     }
 }

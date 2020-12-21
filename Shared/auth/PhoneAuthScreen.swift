@@ -12,7 +12,7 @@ import KeychainSwift
 
 struct PhoneAuthScreen : View{
     
-    @State var result :String = "Not init yet!"
+    @State var result :String = "We will send you a 6 digits OTP"
     @State var phone:String = ""
     @EnvironmentObject var authStore: AuthServiceStore
     @State private var showingAlert = false
@@ -25,10 +25,10 @@ struct PhoneAuthScreen : View{
             VStack{
                 Text(result)
                 HStack{
-                    CountryPickerCustom().padding()
                     if(otpSent){
                         TextField("Enter OTP",text:$otp).keyboardType(.numberPad)
                     }else{
+                        CountryPickerCustom().padding()
                         TextField("Enter Phone",text:$phone).keyboardType(.numberPad)
                     }
                 }
@@ -52,12 +52,13 @@ struct PhoneAuthScreen : View{
                 }, label: {
                     Text(otpSent ? "Verify OTP" : "Request OTP")
                 }).padding().alert(isPresented: $showingAlert) {
-                    Alert(title: Text("Important message"), message: Text("Input not valid!"), dismissButton: .default(Text("Yes!")))
+                    Alert(title: Text("Important message"), message: Text("Input not valid!"), dismissButton: .default(Text("Ok!")))
                 }
                 NavigationLink(destination: HomeScreen(), isActive:$otpVerified){
                     EmptyView()
                 }
             }.resignKeyboardOnTapGesture()
+            .navigationTitle(Text("Verify Phone"))
         }
     }
 

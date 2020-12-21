@@ -16,8 +16,4 @@ end
 target 'WhatsAppClone (macOS)' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
-  # Pods for WhatsAppClone (macOS)
-  pod 'gRPC-Swift', '~> 1.0.0-alpha.20'
-  pod 'gRPC-Swift-Plugins', '~> 1.0.0-alpha.20'
 end

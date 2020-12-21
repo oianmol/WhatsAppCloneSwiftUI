@@ -53,6 +53,7 @@
 		89BC5EED257B6CEE0061D614 /* WHCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5EEB257B6CEE0061D614 /* WHCameraView.swift */; };
 		89BC5F19257B7CDB0061D614 /* ChatsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */; };
 		89BC5F1A257B7CDB0061D614 /* ChatsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */; };
+		89EB35382590850D00E17939 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 89B7A425257E1F2800076836 /* Introspect */; };
 		89EE5F9D258E61BA00015350 /* AuthService.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EE5F9A258E61BA00015350 /* AuthService.grpc.swift */; };
 		89EE5F9E258E61BA00015350 /* AuthService.proto in Sources */ = {isa = PBXBuildFile; fileRef = 89EE5F9B258E61BA00015350 /* AuthService.proto */; };
 		89EE5F9F258E61BA00015350 /* AuthService.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EE5F9C258E61BA00015350 /* AuthService.pb.swift */; };
@@ -132,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D7590D9469F987DF3D6C4F4 /* Pods_WhatsAppClone__iOS_.framework in Frameworks */,
+				89EB35382590850D00E17939 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +377,7 @@
 			);
 			name = "WhatsAppClone (iOS)";
 			packageProductDependencies = (
-				89B7A425257E1F2800076836,
+				89B7A425257E1F2800076836 /* Introspect */,
 			);
 			productName = "WhatsAppClone (iOS)";
 			productReference = 89BC5E61257B433D0061D614 /* WhatsAppClone.app */;
@@ -389,7 +391,6 @@
 				89BC5E65257B433D0061D614 /* Sources */,
 				89BC5E66257B433D0061D614 /* Frameworks */,
 				89BC5E67257B433D0061D614 /* Resources */,
-				36806989D5D7DD67060FCCE9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -471,7 +472,7 @@
 			);
 			mainGroup = 89BC5E54257B433D0061D614;
 			packageReferences = (
-				89B7A424257E1F2800076836,
+				89B7A424257E1F2800076836 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = 89BC5E62257B433D0061D614 /* Products */;
 			projectDirPath = "";
@@ -519,23 +520,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		36806989D5D7DD67060FCCE9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WhatsAppClone (macOS)/Pods-WhatsAppClone (macOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WhatsAppClone (macOS)/Pods-WhatsAppClone (macOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhatsAppClone (macOS)/Pods-WhatsAppClone (macOS)-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7B2BC65B249B414EF6579DD5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1043,7 +1027,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		89B7A424257E1F2800076836 = {
+		89B7A424257E1F2800076836 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
 			requirement = {
@@ -1054,9 +1038,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		89B7A425257E1F2800076836 = {
+		89B7A425257E1F2800076836 /* Introspect */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 89B7A424257E1F2800076836;
+			package = 89B7A424257E1F2800076836 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
 			productName = Introspect;
 		};
 /* End XCSwiftPackageProductDependency section */

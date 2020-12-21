@@ -24,6 +24,10 @@ public struct Constants{
         colorScheme == .light ? Color.white : Constants.darkColor
     }
     
+    static func lightDarkTextColor(colorScheme:ColorScheme) -> Color{
+        colorScheme == .dark ? Color.white : Constants.darkColor
+    }
+    
 }
 
 extension Color {

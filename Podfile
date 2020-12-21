@@ -8,6 +8,7 @@ target 'WhatsAppClone (iOS)' do
   # Pods for WhatsAppClone (iOS)
   pod 'gRPC-Swift', '~> 1.0.0-alpha.20'
   pod 'gRPC-Swift-Plugins', '~> 1.0.0-alpha.20'
+  pod 'CountryPickerView','~> 3.1.3'
 
 end
 

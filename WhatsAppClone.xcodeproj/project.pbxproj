@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D7590D9469F987DF3D6C4F4 /* Pods_WhatsAppClone__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10073A167FAD9CF252FA917 /* Pods_WhatsAppClone__iOS_.framework */; };
+		2EE93C87440DC9C57229E117 /* CountryPickerCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE9359EF6DFA15596EFB00F /* CountryPickerCustom.swift */; };
 		8952A2B3257BC09A00B6A253 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952A29C257BBF0500B6A253 /* CameraController.swift */; };
 		8952A2B4257BC09A00B6A253 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952A29C257BBF0500B6A253 /* CameraController.swift */; };
 		8952A2B5257BC09A00B6A253 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952A29D257BBF2200B6A253 /* CameraViewController.swift */; };
@@ -28,7 +29,6 @@
 		8993C256258F3D8F00E97B73 /* AuthService.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EE5F9A258E61BA00015350 /* AuthService.grpc.swift */; };
 		89B75412257CE3020075785C /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B75411257CE3020075785C /* ChatViewModel.swift */; };
 		89B75413257CE3020075785C /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B75411257CE3020075785C /* ChatViewModel.swift */; };
-		89B7A426257E1F2800076836 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 89B7A425257E1F2800076836 /* Introspect */; };
 		89BC5E76257B433D0061D614 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5E75257B433D0061D614 /* Tests_iOS.swift */; };
 		89BC5E81257B433D0061D614 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5E80257B433D0061D614 /* Tests_macOS.swift */; };
 		89BC5E83257B433D0061D614 /* WhatsAppCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5E5A257B433D0061D614 /* WhatsAppCloneApp.swift */; };
@@ -78,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2EE9359EF6DFA15596EFB00F /* CountryPickerCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerCustom.swift; sourceTree = "<group>"; };
 		398E1ACFC18C671A383FBB21 /* Pods-WhatsAppClone (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppClone (macOS).debug.xcconfig"; path = "Target Support Files/Pods-WhatsAppClone (macOS)/Pods-WhatsAppClone (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		7B06A382F9BA4DA5405BE551 /* Pods-WhatsAppClone (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppClone (iOS).debug.xcconfig"; path = "Target Support Files/Pods-WhatsAppClone (iOS)/Pods-WhatsAppClone (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 		8952A29C257BBF0500B6A253 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
@@ -131,7 +132,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D7590D9469F987DF3D6C4F4 /* Pods_WhatsAppClone__iOS_.framework in Frameworks */,
-				89B7A426257E1F2800076836 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +167,14 @@
 				AF18A8BB1D31FD09947FD9E3 /* Pods_WhatsAppClone__macOS_.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2EE9326FA2E1BA1A5DD964A9 /* countrypicker */ = {
+			isa = PBXGroup;
+			children = (
+				2EE9359EF6DFA15596EFB00F /* CountryPickerCustom.swift */,
+			);
+			path = countrypicker;
 			sourceTree = "<group>";
 		};
 		505F8A049C60C18F100998EE /* Pods */ = {
@@ -343,6 +351,7 @@
 			children = (
 				89EE5FA5258E620600015350 /* PhoneAuthScreen.swift */,
 				8993C24C258F3CE700E97B73 /* AuthServiceStore.swift */,
+				2EE9326FA2E1BA1A5DD964A9 /* countrypicker */,
 			);
 			path = auth;
 			sourceTree = "<group>";
@@ -366,7 +375,7 @@
 			);
 			name = "WhatsAppClone (iOS)";
 			packageProductDependencies = (
-				89B7A425257E1F2800076836 /* Introspect */,
+				89B7A425257E1F2800076836,
 			);
 			productName = "WhatsAppClone (iOS)";
 			productReference = 89BC5E61257B433D0061D614 /* WhatsAppClone.app */;
@@ -462,7 +471,7 @@
 			);
 			mainGroup = 89BC5E54257B433D0061D614;
 			packageReferences = (
-				89B7A424257E1F2800076836 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+				89B7A424257E1F2800076836,
 			);
 			productRefGroup = 89BC5E62257B433D0061D614 /* Products */;
 			projectDirPath = "";
@@ -621,6 +630,7 @@
 				89BC5ED6257B651B0061D614 /* SettingsCommonListItem.swift in Sources */,
 				89BC5EA6257B47A40061D614 /* HomeScreen.swift in Sources */,
 				897AB200257D133E001E4ECC /* Constants.swift in Sources */,
+				2EE93C87440DC9C57229E117 /* CountryPickerCustom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1033,7 +1043,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		89B7A424257E1F2800076836 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+		89B7A424257E1F2800076836 = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
 			requirement = {
@@ -1044,9 +1054,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		89B7A425257E1F2800076836 /* Introspect */ = {
+		89B7A425257E1F2800076836 = {
 			isa = XCSwiftPackageProductDependency;
-			package = 89B7A424257E1F2800076836 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			package = 89B7A424257E1F2800076836;
 			productName = Introspect;
 		};
 /* End XCSwiftPackageProductDependency section */

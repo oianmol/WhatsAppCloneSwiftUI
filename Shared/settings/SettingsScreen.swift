@@ -13,29 +13,35 @@ struct SettingsScreen : View{
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View{
-        ScrollView{
-            LazyVStack{
-                VStack{
-                    Space()
-                    Section{
-                        SettingsUserHeader()
-                    }
-                    
-                    Space()
-                    Section{
-                        SettingsFirstBlock()
-                    }
-                    Space()
-                    Section{
-                        SettingsSecondBlock()
-                    }
-                    Space()
-                    Section{
-                        SettingsThirdBlock()
-                    }
-                    Space()
-                }.background(colorScheme == .dark ? Constants.darkColor : Color.white)
-            }
+        NavigationView{
+            ScrollView{
+                LazyVStack{
+                    VStack{
+                        Space()
+                        Section{
+                            SettingsUserHeader()
+                        }
+                        
+                        Space()
+                        Section{
+                            SettingsFirstBlock()
+                        }
+                        Space()
+                        Section{
+                            SettingsSecondBlock()
+                        }
+                        Space()
+                        Section{
+                            SettingsThirdBlock()
+                        }
+                        Space()
+                    }.background(colorScheme == .dark ? Constants.darkColor : Color.white)
+                }
+            }.navigationBarItems(leading: Button("Privacy"){
+                
+            },trailing:Button(action: {}){
+                
+            }).navigationTitle("Settings")
         }
     }
 }

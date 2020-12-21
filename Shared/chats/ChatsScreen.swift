@@ -13,10 +13,11 @@ struct ChatsScreen : View{
     let cars = ["Subaru WRX", "Tesla Model 3", "Porsche 911", "Renault Zoe", "DeLorean", "Mitsubishi Lancer", "Audi RS6","Subaru WRX", "Tesla Model 3", "Porsche 911", "Renault Zoe", "DeLorean", "Mitsubishi Lancer", "Audi RS6"]
     
 
-    @ObservedObject var searchBar:SearchBar
+    @ObservedObject var searchBar: SearchBar = SearchBar()
     @Environment(\.colorScheme) var colorScheme
 
     var body: some View{
+        NavigationView{
             ScrollView{
                 VStack{
                     Header()
@@ -35,8 +36,14 @@ struct ChatsScreen : View{
                     }
                 }.background(colorScheme == .dark ? Constants.darkColor : Color.white)
                 
-            }
+            }.navigationBarItems(leading: Button("Edit"){
+                
+            },trailing: Button(action:{}){
+                Image(systemName: "pencil")
+            }).navigationTitle("Chats")
+            .add(searchBar)
             .resignKeyboardOnDragGesture()
+        }
     }
 }
 

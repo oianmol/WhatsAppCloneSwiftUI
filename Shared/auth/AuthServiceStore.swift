@@ -14,6 +14,20 @@ typealias Pair = (AuthResponse?,Error?)
 
 final class AuthServiceStore{
     
+    func verifyOtp(otp:String,phoneNumber:String) -> Pair? {
+        do{
+            var authRequest = AuthVerify()
+            authRequest.phoneNumber = phoneNumber
+            authRequest.code = otp
+            let clientConnection = getClientConnection()
+            let authService = AuthServiceClient(channel: clientConnection)
+            let authResult = try authService.verifyOtp(authRequest,callOptions: makeOptions()).response.wait()
+            return Pair(authResult,nil)
+        }catch{
+            return Pair(nil,error)
+        }
+    }
+
     func authorizeNow(phoneNumber:String) -> Pair? {
         do{
             var authRequest = AuthRequest()

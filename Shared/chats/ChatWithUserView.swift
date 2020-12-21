@@ -23,22 +23,16 @@ struct ChatWithUserView: View {
     
     
     var body: some View {
-     
             VStack(alignment:.leading){
-                HStack{
-                    navigationLeading
-                    Spacer()
-                    navigationTrailing
-                }.background(Constants.lightDarkColor(colorScheme:colorScheme))
-                
                   messagesList
                   Spacer()
-                  Footer(tableView:$tableView, yOffset:$yOffset).environmentObject(chatViewModel)
-            }.background(Constants.lightDarkColor(colorScheme: colorScheme)).resignKeyboardOnTapGesture()
-            
-              .navigationBarItems(leading: navigationLeading,
-                                  trailing:navigationTrailing)
-              .widthHeightmatchParent().navigationBarHidden(true)
+                  Footer(tableView:$tableView, yOffset:$yOffset)
+                    .environmentObject(chatViewModel)
+            }.background(Constants.lightDarkColor(colorScheme: colorScheme))
+            .widthHeightmatchParent()
+            .resignKeyboardOnTapGesture()
+            .navigationBarItems(leading: navigationLeading,
+                                trailing: navigationTrailing)
         
         
     }
@@ -89,31 +83,24 @@ struct ChatWithUserView: View {
     }
     
     var navigationLeading:some View{
-        HStack{
-            Button(action: { presentation.wrappedValue.dismiss() }) {
-                Image(systemName: "chevron.left")
-                    .foregroundColor(.blue)
-                    .imageScale(.large)
-                
-            }.padding()
-            Button(action: {}, label: {
-                Image("RandomUser")
-                    .frame(width: 28, height: 28)
-                    .clipShape(Circle())
-                    .shadow(radius: 28)
-                Text(name)
-            })
-        }
+        Button(action: {}, label: {
+            Image("RandomUser")
+                .frame(width: 28, height: 28)
+                .clipShape(Circle())
+                .shadow(radius: 28)
+            Text(name)
+        })
     }
     var navigationTrailing : some View{
         HStack{
+            Spacer()
             Button(action: {
                 
             }, label: {
                 Image(systemName: "video")
                     .foregroundColor(.blue)
                     .imageScale(.large)
-            }).padding()
+            })
            
             Button(action: {
                 
@@ -121,7 +108,7 @@ struct ChatWithUserView: View {
                 Image(systemName: "phone")
                     .foregroundColor(.blue)
                     .imageScale(.large)
-            }).padding()
+            })
         }
     }
 }

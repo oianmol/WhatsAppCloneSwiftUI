@@ -11,6 +11,7 @@ A clone for WhatsApp UI using SwiftUI
 ![Screenshot](art/IMG_0463.PNG)
 
 
-This project now uses a GRPC server to authorize phone numbers, The source code and instructions are available at https://github.com/Anmol92verma/GrpcKotlinServer
+> This project now uses a GRPC server to authorize phone numbers, 
+>The source code and instructions are available at https://github.com/Anmol92verma/GrpcKotlinServer
 
-
+>Make sure to add your my-public-key-cert.pem to cert folder withing shared! Check GrpcKotlinServer README to setup your local cert

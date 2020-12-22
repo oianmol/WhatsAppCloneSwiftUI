@@ -1,6 +1,7 @@
 # Mac OS X
 .DS_Store
 Pods
+Shared/cert
 # Xcode
 ## Build generated
 build/

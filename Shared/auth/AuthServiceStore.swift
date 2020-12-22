@@ -8,6 +8,7 @@
 import Foundation
 import GRPC
 import NIO
+import NIOSSL
 import NIOHPACK
 import KeychainSwift
 
@@ -17,7 +18,7 @@ final class AuthServiceStore : ObservableObject{
     
     private let keyChainSwift = KeychainSwift()
     @Published var isAuthorizedNow: Bool? // Step 2
-
+    
     func setLoggedIn(authResponse:AuthResponse){
         keyChainSwift.set(true, forKey: Constants.IS_AUTH)
         isAuthorizedNow = true
@@ -42,9 +43,13 @@ final class AuthServiceStore : ObservableObject{
             authRequest.phoneNumber = phoneNumber
             authRequest.code = otp
             let clientConnection = getClientConnection()
-            let authService = AuthServiceClient(channel: clientConnection)
-            let authResult = try authService.verifyOtp(authRequest,callOptions: makeOptions()).response.wait()
-            return Pair(authResult,nil)
+            if let connection = clientConnection {
+                let authService = AuthServiceClient(channel: connection)
+                let authResult = try authService.verifyOtp(authRequest,callOptions: makeOptions()).response.wait()
+                return Pair(authResult,nil)
+            }else{
+                return Pair(nil,GRPCError.runtimeError("Failed to load cert"))
+            }
         }catch{
             return Pair(nil,error)
         }
@@ -56,9 +61,14 @@ final class AuthServiceStore : ObservableObject{
             authRequest.phoneNumber = phoneNumber
             
             let clientConnection = getClientConnection()
-            let authService = AuthServiceClient(channel: clientConnection)
-            let authResult = try authService.authorize(authRequest,callOptions: makeOptions()).response.wait()
-            return Pair(authResult,nil)
+            if let connection = clientConnection {
+                let authService = AuthServiceClient(channel: connection)
+                let authResult = try authService.authorize(authRequest,callOptions: makeOptions()).response.wait()
+                return Pair(authResult,nil)
+            }else{
+                return Pair(nil,GRPCError.runtimeError("Failed to load cert"))
+            }
+            
         }catch{
             return Pair(nil,error)
         }
@@ -75,12 +85,27 @@ final class AuthServiceStore : ObservableObject{
         return option
     }
     
-    func getClientConnection() -> ClientConnection {
-        let mtelg = MultiThreadedEventLoopGroup(numberOfThreads: 1)
-        let config = ClientConnection.Configuration(target: .hostAndPort("192.168.1.15", 8080), eventLoopGroup: mtelg)
-        
-        let connection = ClientConnection(configuration: config)
-        return connection
+    func getClientConnection() -> ClientConnection? {
+        do {
+           
+            let certfile = Bundle.main.path(forResource: "my-public-key-cert", ofType: ".pem")!
+           
+            let config = ClientConnection.Configuration(
+                target: .hostAndPort("192.168.1.15", 8443),
+                eventLoopGroup: MultiThreadedEventLoopGroup(numberOfThreads: System.coreCount),
+                tls: .init(certificateChain: try NIOSSLCertificate.fromPEMFile(certfile).map { .certificate($0) },
+                           certificateVerification: .none))
+            
+            let connection = ClientConnection(configuration: config)
+            return connection
+        } catch {
+            print("ERROR\n\(error)")
+            return nil
+        }
     }
     
+}
+
+enum GRPCError: Error {
+    case runtimeError(String)
 }

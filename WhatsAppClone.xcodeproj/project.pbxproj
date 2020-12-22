@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D7590D9469F987DF3D6C4F4 /* Pods_WhatsAppClone__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10073A167FAD9CF252FA917 /* Pods_WhatsAppClone__iOS_.framework */; };
 		2EE93C87440DC9C57229E117 /* CountryPickerCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE9359EF6DFA15596EFB00F /* CountryPickerCustom.swift */; };
+		892CF1B0259236A30099BD42 /* my-public-key-cert.pem in Resources */ = {isa = PBXBuildFile; fileRef = 892CF1AF259236A30099BD42 /* my-public-key-cert.pem */; };
 		8952A2B3257BC09A00B6A253 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952A29C257BBF0500B6A253 /* CameraController.swift */; };
 		8952A2B4257BC09A00B6A253 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952A29C257BBF0500B6A253 /* CameraController.swift */; };
 		8952A2B5257BC09A00B6A253 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952A29D257BBF2200B6A253 /* CameraViewController.swift */; };
@@ -82,6 +83,7 @@
 		2EE9359EF6DFA15596EFB00F /* CountryPickerCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerCustom.swift; sourceTree = "<group>"; };
 		398E1ACFC18C671A383FBB21 /* Pods-WhatsAppClone (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppClone (macOS).debug.xcconfig"; path = "Target Support Files/Pods-WhatsAppClone (macOS)/Pods-WhatsAppClone (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		7B06A382F9BA4DA5405BE551 /* Pods-WhatsAppClone (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppClone (iOS).debug.xcconfig"; path = "Target Support Files/Pods-WhatsAppClone (iOS)/Pods-WhatsAppClone (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+		892CF1AF259236A30099BD42 /* my-public-key-cert.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "my-public-key-cert.pem"; sourceTree = "<group>"; };
 		8952A29C257BBF0500B6A253 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		8952A29D257BBF2200B6A253 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		8952A2D1257BC5A600B6A253 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -190,6 +192,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		892CF1AE2592367F0099BD42 /* cert */ = {
+			isa = PBXGroup;
+			children = (
+				892CF1AF259236A30099BD42 /* my-public-key-cert.pem */,
+			);
+			path = cert;
+			sourceTree = "<group>";
+		};
 		8952A2D0257BC59A00B6A253 /* search */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +243,7 @@
 		89BC5E59257B433D0061D614 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				892CF1AE2592367F0099BD42 /* cert */,
 				89EE5FA4258E61F300015350 /* auth */,
 				89EE5F98258E614A00015350 /* protos */,
 				897AB1FF257D133E001E4ECC /* Constants.swift */,
@@ -492,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89BC5E87257B433D0061D614 /* Assets.xcassets in Resources */,
+				892CF1B0259236A30099BD42 /* my-public-key-cert.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

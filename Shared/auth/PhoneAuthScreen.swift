@@ -25,6 +25,9 @@ struct PhoneAuthScreen : View{
         NavigationView{
             VStack{
                 Text(result)
+
+                Image("WhatsAppWeb").resizable().frame(width: 100,height: 100).padding()
+
                 HStack{
                     if(otpSent){
                         TextField("Enter OTP",text:$otp).keyboardType(.numberPad).padding()

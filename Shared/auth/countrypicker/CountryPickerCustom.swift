@@ -15,9 +15,14 @@ struct CountryPickerCustom: UIViewRepresentable {
     
     @Environment(\.colorScheme) var colorScheme
 
-    func makeUIView(context: Context) -> CountryPickerView {
+    init(countryPicker:CountryPickerView){
+        self.countryPicker = countryPicker
         countryPicker.setCountryByPhoneCode("+91")
-        countryPicker.textColor = colorScheme == .dark ? .white : .black
+        countryPicker.textColor = colorScheme == .dark ? UIColor.white : UIColor.black
+    }
+
+
+    func makeUIView(context: Context) -> CountryPickerView {
         return countryPicker
     }
 

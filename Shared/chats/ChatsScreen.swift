@@ -14,7 +14,7 @@ struct ChatsScreen : View{
 
     @ObservedObject var searchBar: SearchBar
     @Environment(\.colorScheme) var colorScheme
-    @ObservedObject var contactService = ContactService()
+    @EnvironmentObject var contactService : ContactService
     
     var body: some View{
             ScrollView{

@@ -16,11 +16,10 @@ struct HomeScreen : View{
     @State private var selected = 3
     @ObservedObject var searchBar: SearchBar = SearchBar()
     @State private var chatsNavTitle = "Chats"
-    
-    
-    
+
     var body: some View {
-        let view = NavigationTabs(selected: self.$selected,searchBar:searchBar)
+        
+       let view = NavigationTabs(selected: self.$selected,searchBar:searchBar)
 
             if(selected == 2){
                 view
@@ -78,6 +77,7 @@ struct HomeScreen : View{
 struct NavigationTabs:View{
     @Binding var selected : Int
     @ObservedObject var searchBar:SearchBar
+    @ObservedObject var contactService: ContactService = ContactService()
 
     var body: some View{
         TabView(selection: $selected){
@@ -96,7 +96,7 @@ struct NavigationTabs:View{
                 Text("Camera")
             }.tag(2)
 
-            ChatsScreen(searchBar:searchBar).tabItem {
+            ChatsScreen(searchBar:searchBar).environmentObject(contactService).tabItem {
                 Image(systemName:self.selected == 3 ? "message.fill":"message")
                 Text("Chats")
             }.tag(3)
@@ -125,6 +125,13 @@ extension View{
 
 
 struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeScreen()
+    }
+}
+
+
+struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
         HomeScreen()
     }

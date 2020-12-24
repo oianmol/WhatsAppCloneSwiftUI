@@ -27,6 +27,6 @@ struct CountryPickerCustom: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: CountryPickerView, context: Context) {
-
+        countryPicker.textColor = colorScheme == .dark ? UIColor.white : UIColor.black
     }
 }

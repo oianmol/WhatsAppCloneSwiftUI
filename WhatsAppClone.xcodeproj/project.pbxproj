@@ -24,6 +24,7 @@
 		89886A02257B985E008C36B4 /* ChatWithUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89886A00257B985E008C36B4 /* ChatWithUserView.swift */; };
 		8989F6A7257B8987005152EF /* ChatUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989F6A6257B8987005152EF /* ChatUserView.swift */; };
 		8989F6A8257B8987005152EF /* ChatUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8989F6A6257B8987005152EF /* ChatUserView.swift */; };
+		898FE5632594A8A20084AEDD /* TraitCollectionListenerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FE5622594A8A20084AEDD /* TraitCollectionListenerView.swift */; };
 		8993C24D258F3CE700E97B73 /* AuthServiceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8993C24C258F3CE700E97B73 /* AuthServiceStore.swift */; };
 		8993C256258F3D8F00E97B73 /* AuthService.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EE5F9A258E61BA00015350 /* AuthService.grpc.swift */; };
 		89B75412257CE3020075785C /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B75411257CE3020075785C /* ChatViewModel.swift */; };
@@ -54,6 +55,7 @@
 		89BC5F1A257B7CDB0061D614 /* ChatsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */; };
 		89D485CE25945D5B00D1E1FC /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D485CD25945D5B00D1E1FC /* ContactService.swift */; };
 		89D485D425945E6C00D1E1FC /* ChatterContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D485D325945E6C00D1E1FC /* ChatterContact.swift */; };
+		89D4861625948C6300D1E1FC /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D4861525948C6300D1E1FC /* NavigationBarModifier.swift */; };
 		89EB35382590850D00E17939 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 89B7A425257E1F2800076836 /* Introspect */; };
 		89EE5F9D258E61BA00015350 /* AuthService.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EE5F9A258E61BA00015350 /* AuthService.grpc.swift */; };
 		89EE5F9E258E61BA00015350 /* AuthService.proto in Sources */ = {isa = PBXBuildFile; fileRef = 89EE5F9B258E61BA00015350 /* AuthService.proto */; };
@@ -93,6 +95,7 @@
 		897AB206257D1A65001E4ECC /* SUImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
 		89886A00257B985E008C36B4 /* ChatWithUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWithUserView.swift; sourceTree = "<group>"; };
 		8989F6A6257B8987005152EF /* ChatUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserView.swift; sourceTree = "<group>"; };
+		898FE5622594A8A20084AEDD /* TraitCollectionListenerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitCollectionListenerView.swift; sourceTree = "<group>"; };
 		8993C24C258F3CE700E97B73 /* AuthServiceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceStore.swift; sourceTree = "<group>"; };
 		89B75411257CE3020075785C /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		89B7A41B257DDDDE00076836 /* WhatsAppClone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhatsAppClone.entitlements; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 		89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsScreen.swift; sourceTree = "<group>"; };
 		89D485CD25945D5B00D1E1FC /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
 		89D485D325945E6C00D1E1FC /* ChatterContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatterContact.swift; sourceTree = "<group>"; };
+		89D4861525948C6300D1E1FC /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		89EE5F9A258E61BA00015350 /* AuthService.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.grpc.swift; sourceTree = "<group>"; };
 		89EE5F9B258E61BA00015350 /* AuthService.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = AuthService.proto; sourceTree = "<group>"; };
 		89EE5F9C258E61BA00015350 /* AuthService.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.pb.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 		897AB1FE257D1334001E4ECC /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				89D4861525948C6300D1E1FC /* NavigationBarModifier.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 		89BC5E59257B433D0061D614 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				89D4861B259496B100D1E1FC /* customviews */,
 				89D485CC25945D4D00D1E1FC /* contacts */,
 				892CF1AE2592367F0099BD42 /* cert */,
 				89EE5FA4258E61F300015350 /* auth */,
@@ -349,6 +355,14 @@
 				89D485D325945E6C00D1E1FC /* ChatterContact.swift */,
 			);
 			path = contacts;
+			sourceTree = "<group>";
+		};
+		89D4861B259496B100D1E1FC /* customviews */ = {
+			isa = PBXGroup;
+			children = (
+				898FE5622594A8A20084AEDD /* TraitCollectionListenerView.swift */,
+			);
+			path = customviews;
 			sourceTree = "<group>";
 		};
 		89EE5F98258E614A00015350 /* protos */ = {
@@ -611,11 +625,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				89BC5EEC257B6CEE0061D614 /* WHCameraView.swift in Sources */,
+				898FE5632594A8A20084AEDD /* TraitCollectionListenerView.swift in Sources */,
 				8956282F258B636B0087B4B1 /* ChatFooterView.swift in Sources */,
 				89BC5F19257B7CDB0061D614 /* ChatsScreen.swift in Sources */,
 				8993C24D258F3CE700E97B73 /* AuthServiceStore.swift in Sources */,
 				8952A2D2257BC5A600B6A253 /* SearchBar.swift in Sources */,
 				897AB207257D1A65001E4ECC /* SUImagePickerView.swift in Sources */,
+				89D4861625948C6300D1E1FC /* NavigationBarModifier.swift in Sources */,
 				8952A2B4257BC09A00B6A253 /* CameraController.swift in Sources */,
 				89BC5EB9257B55780061D614 /* SettingsUserHeader.swift in Sources */,
 				8989F6A7257B8987005152EF /* ChatUserView.swift in Sources */,

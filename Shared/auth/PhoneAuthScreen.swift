@@ -20,6 +20,7 @@ struct PhoneAuthScreen : View{
     @State private var otpSent = false
     @State private var otpVerified = false
     let countryPicker = CountryPickerView()
+    @Environment(\.colorScheme) var colorScheme
 
     var body: some View{
         NavigationView{
@@ -62,6 +63,8 @@ struct PhoneAuthScreen : View{
                     EmptyView()
                 }
             }.resignKeyboardOnTapGesture()
+            .background(Constants.lightDarkColor(colorScheme: colorScheme))
+            .navigationBarChatterColor()
             .navigationTitle(Text("Verify Phone"))
         }
     }

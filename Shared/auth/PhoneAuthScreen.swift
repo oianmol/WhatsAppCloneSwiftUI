@@ -19,6 +19,7 @@ struct PhoneAuthScreen : View{
     @State private var otp = ""
     @State private var otpSent = false
     @State private var otpVerified = false
+    let countryPicker = CountryPickerView()
 
     var body: some View{
         NavigationView{
@@ -28,7 +29,7 @@ struct PhoneAuthScreen : View{
                     if(otpSent){
                         TextField("Enter OTP",text:$otp).keyboardType(.numberPad).padding()
                     }else{
-                        CountryPickerCustom().padding()
+                        CountryPickerCustom(countryPicker:countryPicker).padding()
                         TextField("Enter Phone",text:$phone).keyboardType(.numberPad)
                     }
                 }
@@ -64,7 +65,7 @@ struct PhoneAuthScreen : View{
 
     func verifyOtp(){
         DispatchQueue.global(qos: .background).async {
-            let authNow = authStore.verifyOtp(otp:otp, phoneNumber: "+918284866938")
+            let authNow = authStore.verifyOtp(otp:otp, phoneNumber: countryPicker.selectedCountry.phoneCode+phone)
             DispatchQueue.main.async {
                 if let response = authNow?.0?.message {
                     if(authNow!.0!.code == 200){
@@ -84,7 +85,7 @@ struct PhoneAuthScreen : View{
 
     func authorize(){
                     DispatchQueue.global(qos: .background).async {
-                        let authNow = authStore.authorizeNow(phoneNumber: "+918284866938")
+                        let authNow = authStore.authorizeNow(phoneNumber: countryPicker.selectedCountry.phoneCode+phone)
                         DispatchQueue.main.async {
                             if let response = authNow?.0?.message {
                                 if(authNow!.0!.code == 200){

@@ -19,7 +19,7 @@ struct ChatWithUserView: View {
     @ObservedObject var chatViewModel = ChatViewModel()
     
     
-    let name:String
+    let chatterContact:ChatterContact
     
     
     var body: some View {
@@ -88,7 +88,7 @@ struct ChatWithUserView: View {
                 .frame(width: 28, height: 28)
                 .clipShape(Circle())
                 .shadow(radius: 28)
-            Text(name)
+            Text(chatterContact.fullName())
         })
     }
     var navigationTrailing : some View{

@@ -54,6 +54,8 @@
 		89BC5EED257B6CEE0061D614 /* WHCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5EEB257B6CEE0061D614 /* WHCameraView.swift */; };
 		89BC5F19257B7CDB0061D614 /* ChatsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */; };
 		89BC5F1A257B7CDB0061D614 /* ChatsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */; };
+		89D485CE25945D5B00D1E1FC /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D485CD25945D5B00D1E1FC /* ContactService.swift */; };
+		89D485D425945E6C00D1E1FC /* ChatterContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D485D325945E6C00D1E1FC /* ChatterContact.swift */; };
 		89EB35382590850D00E17939 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 89B7A425257E1F2800076836 /* Introspect */; };
 		89EE5F9D258E61BA00015350 /* AuthService.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EE5F9A258E61BA00015350 /* AuthService.grpc.swift */; };
 		89EE5F9E258E61BA00015350 /* AuthService.proto in Sources */ = {isa = PBXBuildFile; fileRef = 89EE5F9B258E61BA00015350 /* AuthService.proto */; };
@@ -119,6 +121,8 @@
 		89BC5EDC257B65DC0061D614 /* SettingsThirdBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsThirdBlock.swift; sourceTree = "<group>"; };
 		89BC5EEB257B6CEE0061D614 /* WHCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHCameraView.swift; sourceTree = "<group>"; };
 		89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsScreen.swift; sourceTree = "<group>"; };
+		89D485CD25945D5B00D1E1FC /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
+		89D485D325945E6C00D1E1FC /* ChatterContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatterContact.swift; sourceTree = "<group>"; };
 		89EE5F9A258E61BA00015350 /* AuthService.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.grpc.swift; sourceTree = "<group>"; };
 		89EE5F9B258E61BA00015350 /* AuthService.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = AuthService.proto; sourceTree = "<group>"; };
 		89EE5F9C258E61BA00015350 /* AuthService.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.pb.swift; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 		89BC5E59257B433D0061D614 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				89D485CC25945D4D00D1E1FC /* contacts */,
 				892CF1AE2592367F0099BD42 /* cert */,
 				89EE5FA4258E61F300015350 /* auth */,
 				89EE5F98258E614A00015350 /* protos */,
@@ -339,6 +344,15 @@
 				8956282E258B636B0087B4B1 /* ChatFooterView.swift */,
 			);
 			path = chats;
+			sourceTree = "<group>";
+		};
+		89D485CC25945D4D00D1E1FC /* contacts */ = {
+			isa = PBXGroup;
+			children = (
+				89D485CD25945D5B00D1E1FC /* ContactService.swift */,
+				89D485D325945E6C00D1E1FC /* ChatterContact.swift */,
+			);
+			path = contacts;
 			sourceTree = "<group>";
 		};
 		89EE5F98258E614A00015350 /* protos */ = {
@@ -611,6 +625,7 @@
 				8989F6A7257B8987005152EF /* ChatUserView.swift in Sources */,
 				89562836258B64F60087B4B1 /* NavigationBarModifier.swift in Sources */,
 				89B75412257CE3020075785C /* ChatViewModel.swift in Sources */,
+				89D485D425945E6C00D1E1FC /* ChatterContact.swift in Sources */,
 				89BC5E83257B433D0061D614 /* WhatsAppCloneApp.swift in Sources */,
 				89BC5EDD257B65DC0061D614 /* SettingsThirdBlock.swift in Sources */,
 				89EE5F9D258E61BA00015350 /* AuthService.grpc.swift in Sources */,
@@ -624,6 +639,7 @@
 				89BC5ECF257B64E50061D614 /* SettingsSecondBlock.swift in Sources */,
 				89EE5FA6258E620600015350 /* PhoneAuthScreen.swift in Sources */,
 				89BC5ED6257B651B0061D614 /* SettingsCommonListItem.swift in Sources */,
+				89D485CE25945D5B00D1E1FC /* ContactService.swift in Sources */,
 				89BC5EA6257B47A40061D614 /* HomeScreen.swift in Sources */,
 				897AB200257D133E001E4ECC /* Constants.swift in Sources */,
 				2EE93C87440DC9C57229E117 /* CountryPickerCustom.swift in Sources */,

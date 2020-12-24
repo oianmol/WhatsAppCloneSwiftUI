@@ -10,29 +10,33 @@ import SwiftUI
 
 
 struct ChatsScreen : View{
-    let cars = ["Subaru WRX", "Tesla Model 3", "Porsche 911", "Renault Zoe", "DeLorean", "Mitsubishi Lancer", "Audi RS6","Subaru WRX", "Tesla Model 3", "Porsche 911", "Renault Zoe", "DeLorean", "Mitsubishi Lancer", "Audi RS6"]
-    
+  
 
     @ObservedObject var searchBar: SearchBar
     @Environment(\.colorScheme) var colorScheme
-
+    @ObservedObject var contactService = ContactService()
+    
     var body: some View{
             ScrollView{
                 VStack{
                     Header()
                     Divider().padding(EdgeInsets.init(top: 5, leading: 0, bottom: 0, trailing: 0))
-
-                    ForEach(self.cars.filter {
-                        searchBar.text.isEmpty ||
-                        $0.localizedStandardContains(searchBar.text)
-                    }, id: \.self) { car in
-                        NavigationLink(destination: ChatWithUserView(name:car)){
-                            VStack{
-                                ChatUserView(name:car)
-                                Divider().padding(EdgeInsets.init(top: 5, leading: 15, bottom: 0, trailing: 0))
+                    if(contactService.isLoading){
+                        ProgressView().padding()
+                    }else{
+                        ForEach(self.contactService.contacts.filter {
+                            searchBar.text.isEmpty ||
+                                $0.fullName().localizedCaseInsensitiveContains(searchBar.text)
+                        }, id: \.self) { car in
+                            NavigationLink(destination: ChatWithUserView(chatterContact:car)){
+                                VStack{
+                                    ChatUserView(name:car)
+                                    Divider().padding(EdgeInsets.init(top: 5, leading: 15, bottom: 0, trailing: 0))
+                                }
                             }
                         }
                     }
+                  
                 }.background(colorScheme == .dark ? Constants.darkColor : Color.white)
             }.resignKeyboardOnDragGesture()
         

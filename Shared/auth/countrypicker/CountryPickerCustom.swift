@@ -11,7 +11,7 @@ import SwiftUI
 
 struct CountryPickerCustom: UIViewRepresentable {
 
-    let countryPicker = CountryPickerView()
+    let countryPicker :CountryPickerView
     
     @Environment(\.colorScheme) var colorScheme
 

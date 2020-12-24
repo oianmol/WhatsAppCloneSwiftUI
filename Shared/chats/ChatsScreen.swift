@@ -38,8 +38,11 @@ struct ChatsScreen : View{
                     }
                   
                 }.background(colorScheme == .dark ? Constants.darkColor : Color.white)
-            }.resignKeyboardOnDragGesture()
-        
+            }.background(Constants.lightDarkColor(colorScheme: colorScheme))
+                    .resignKeyboardOnDragGesture()
+                    .navigationBarColor(Constants.lightDarkColor(colorScheme: colorScheme).toUiColor())
+
+
     }
 }
 

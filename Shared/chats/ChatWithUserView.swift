@@ -17,6 +17,7 @@ struct ChatWithUserView: View {
     @State var yOffset: CGFloat?
 
     @ObservedObject var chatViewModel = ChatViewModel()
+    
 
 
     let chatterContact: ChatterContact
@@ -29,8 +30,8 @@ struct ChatWithUserView: View {
                     .environmentObject(chatViewModel)
         }.background(Constants.lightDarkColor(colorScheme: colorScheme))
                 .widthHeightmatchParent()
+                .navigationBarBackButtonHidden(true)
                 .resignKeyboardOnTapGesture()
-                .navigationBarColor(Constants.lightDarkColor(colorScheme: colorScheme).toUiColor())
                 .navigationBarItems(leading: navigationLeading,
                         trailing: navigationTrailing)
     }
@@ -77,12 +78,16 @@ struct ChatWithUserView: View {
                     self.tableView?.scrollToBottom(animated: true, yOffset: $yOffset)
                 }
             })
-
-
     }
 
     var navigationLeading: some View {
         HStack{
+            Button(action: {
+                presentation.wrappedValue.dismiss()
+            }, label: {
+                Image(systemName: "chevron.backward")
+                              .foregroundColor(.blue)
+            }).padding()
             Image("RandomUser")
                     .frame(width: 28, height: 28)
                     .clipShape(Circle())
@@ -127,7 +132,10 @@ struct PictureImage: View {
     var body: some View {
         VStack {
             Image(uiImage: chatMesage.image!)
-                    .resizable().frame(width: 150, height: 150)
+                    .resizable().frame(width: 150, height: 150).padding(10)
+                    .foregroundColor(Color.white)
+                    .background(Color.blue)
+                    .cornerRadius(10)
 
         }.background(Color.blue)
                 .cornerRadius(25)

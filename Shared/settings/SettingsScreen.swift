@@ -37,7 +37,7 @@ struct SettingsScreen : View{
                         Space()
                     }.background(colorScheme == .dark ? Constants.darkColor : Color.white)
                 }
-            }
+            }.background(Constants.lightDarkColor(colorScheme: colorScheme))
     }
 }
 

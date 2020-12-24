@@ -18,7 +18,7 @@ struct CountryPickerCustom: UIViewRepresentable {
     init(countryPicker:CountryPickerView){
         self.countryPicker = countryPicker
         countryPicker.setCountryByPhoneCode("+91")
-        countryPicker.textColor = colorScheme == .dark ? UIColor.white : UIColor.black
+        countryPicker.textColor = colorScheme == .light ? UIColor.white : UIColor.black
     }
 
 

@@ -18,8 +18,6 @@
 		8952A2D8257BC9D800B6A253 /* ViewContentResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952A2D7257BC9D800B6A253 /* ViewContentResolver.swift */; };
 		8956282F258B636B0087B4B1 /* ChatFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956282E258B636B0087B4B1 /* ChatFooterView.swift */; };
 		89562830258B636B0087B4B1 /* ChatFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956282E258B636B0087B4B1 /* ChatFooterView.swift */; };
-		89562836258B64F60087B4B1 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89562835258B64F60087B4B1 /* NavigationBarModifier.swift */; };
-		89562837258B64F60087B4B1 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89562835258B64F60087B4B1 /* NavigationBarModifier.swift */; };
 		897AB200257D133E001E4ECC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897AB1FF257D133E001E4ECC /* Constants.swift */; };
 		897AB207257D1A65001E4ECC /* SUImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897AB206257D1A65001E4ECC /* SUImagePickerView.swift */; };
 		89886A01257B985E008C36B4 /* ChatWithUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89886A00257B985E008C36B4 /* ChatWithUserView.swift */; };
@@ -91,7 +89,6 @@
 		8952A2D1257BC5A600B6A253 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		8952A2D7257BC9D800B6A253 /* ViewContentResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContentResolver.swift; sourceTree = "<group>"; };
 		8956282E258B636B0087B4B1 /* ChatFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFooterView.swift; sourceTree = "<group>"; };
-		89562835258B64F60087B4B1 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		897AB1FF257D133E001E4ECC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		897AB206257D1A65001E4ECC /* SUImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
 		89886A00257B985E008C36B4 /* ChatWithUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWithUserView.swift; sourceTree = "<group>"; };
@@ -216,7 +213,6 @@
 		897AB1FE257D1334001E4ECC /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				89562835258B64F60087B4B1 /* NavigationBarModifier.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -623,7 +619,6 @@
 				8952A2B4257BC09A00B6A253 /* CameraController.swift in Sources */,
 				89BC5EB9257B55780061D614 /* SettingsUserHeader.swift in Sources */,
 				8989F6A7257B8987005152EF /* ChatUserView.swift in Sources */,
-				89562836258B64F60087B4B1 /* NavigationBarModifier.swift in Sources */,
 				89B75412257CE3020075785C /* ChatViewModel.swift in Sources */,
 				89D485D425945E6C00D1E1FC /* ChatterContact.swift in Sources */,
 				89BC5E83257B433D0061D614 /* WhatsAppCloneApp.swift in Sources */,
@@ -665,7 +660,6 @@
 				89BC5ED7257B651B0061D614 /* SettingsCommonListItem.swift in Sources */,
 				8952A2B5257BC09A00B6A253 /* CameraViewController.swift in Sources */,
 				8952A2B3257BC09A00B6A253 /* CameraController.swift in Sources */,
-				89562837258B64F60087B4B1 /* NavigationBarModifier.swift in Sources */,
 				89B75413257CE3020075785C /* ChatViewModel.swift in Sources */,
 				89BC5EA7257B47A40061D614 /* HomeScreen.swift in Sources */,
 			);

@@ -38,20 +38,29 @@ class ContactService : ObservableObject{
     }
     
     func getContactsInternal(){
-        do{
-            let fetchRequest = CNContactFetchRequest(keysToFetch: [CNContactGivenNameKey,CNContactFamilyNameKey,CNContactPhoneNumbersKey,CNContactThumbnailImageDataKey] as [CNKeyDescriptor])
-            var contacts = [CNContact]()
-            try self.contactStore?.enumerateContacts(with: fetchRequest){ contact,stop in
-                contacts.append(contact)
-            }
-            DispatchQueue.main.async {
-                self.contacts = contacts.map { CNContact in
-                    ChatterContact.fromCNContact(contact: CNContact)
+        
+        var contacts = [CNContact]()
+        
+        DispatchQueue.global(qos: .background).async {
+            do{
+                let fetchRequest = CNContactFetchRequest(keysToFetch: [CNContactGivenNameKey,CNContactFamilyNameKey,CNContactPhoneNumbersKey,CNContactThumbnailImageDataKey] as [CNKeyDescriptor])
+                try self.contactStore?.enumerateContacts(with: fetchRequest){ contact,stop in
+                    contacts.append(contact)
+                }
+                
+                DispatchQueue.main.async {
+                    self.contacts = contacts.map { CNContact in
+                        ChatterContact.fromCNContact(contact: CNContact)
+                    }
+                    self.isLoading = false
+
+                }
+            }catch{
+                DispatchQueue.main.async {
+                    self.isLoading = false
                 }
             }
-        }catch{
-            print("Failed to fetch contact, error: \(error)")
+            
         }
-        self.isLoading = false
     }
 }

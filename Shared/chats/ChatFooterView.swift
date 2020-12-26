@@ -61,6 +61,10 @@ struct Footer: View {
                     .sheet(isPresented: $shouldPresentImagePicker) {
                         SUImagePickerView(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary, isPresented: self.$shouldPresentImagePicker, callback: { image in
                             chatViewModel.addChatMessage(chatMessage: ChatMessage(message: nil, image: image, myMessage: true))
+                            DispatchQueue.global(qos: .background).async {
+                                chatViewModel.uploadFile(data: image.pngData())
+                            }
+                           
                         })
                     }.actionSheet(isPresented: $shouldPresentActionScheet) { () -> ActionSheet in
                         ActionSheet(title: Text("Choose mode"), message: Text("Please choose your preferred mode to set your profile image"), buttons: [ActionSheet.Button.default(Text("Camera"), action: {

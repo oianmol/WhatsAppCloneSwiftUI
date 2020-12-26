@@ -53,6 +53,10 @@
 		89BC5EED257B6CEE0061D614 /* WHCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5EEB257B6CEE0061D614 /* WHCameraView.swift */; };
 		89BC5F19257B7CDB0061D614 /* ChatsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */; };
 		89BC5F1A257B7CDB0061D614 /* ChatsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */; };
+		89C43B7D259787CD002D90AF /* FileTransfer.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C43B7C259787CD002D90AF /* FileTransfer.grpc.swift */; };
+		89C43B84259787E9002D90AF /* FileTransfer.proto in Sources */ = {isa = PBXBuildFile; fileRef = 89C43B82259787E9002D90AF /* FileTransfer.proto */; };
+		89C43B85259787E9002D90AF /* FileTransfer.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C43B83259787E9002D90AF /* FileTransfer.pb.swift */; };
+		89C43B8C259788B8002D90AF /* GrpcChattConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C43B8B259788B8002D90AF /* GrpcChattConnection.swift */; };
 		89D485CE25945D5B00D1E1FC /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D485CD25945D5B00D1E1FC /* ContactService.swift */; };
 		89D485D425945E6C00D1E1FC /* ChatterContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D485D325945E6C00D1E1FC /* ChatterContact.swift */; };
 		89D4861625948C6300D1E1FC /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D4861525948C6300D1E1FC /* NavigationBarModifier.swift */; };
@@ -121,6 +125,10 @@
 		89BC5EDC257B65DC0061D614 /* SettingsThirdBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsThirdBlock.swift; sourceTree = "<group>"; };
 		89BC5EEB257B6CEE0061D614 /* WHCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHCameraView.swift; sourceTree = "<group>"; };
 		89BC5F18257B7CDB0061D614 /* ChatsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsScreen.swift; sourceTree = "<group>"; };
+		89C43B7C259787CD002D90AF /* FileTransfer.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileTransfer.grpc.swift; sourceTree = "<group>"; };
+		89C43B82259787E9002D90AF /* FileTransfer.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = FileTransfer.proto; sourceTree = "<group>"; };
+		89C43B83259787E9002D90AF /* FileTransfer.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileTransfer.pb.swift; sourceTree = "<group>"; };
+		89C43B8B259788B8002D90AF /* GrpcChattConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrpcChattConnection.swift; sourceTree = "<group>"; };
 		89D485CD25945D5B00D1E1FC /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
 		89D485D325945E6C00D1E1FC /* ChatterContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatterContact.swift; sourceTree = "<group>"; };
 		89D4861525948C6300D1E1FC /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
@@ -248,6 +256,7 @@
 		89BC5E59257B433D0061D614 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				89C43B8A259788AC002D90AF /* grpc */,
 				89D4861B259496B100D1E1FC /* customviews */,
 				89D485CC25945D4D00D1E1FC /* contacts */,
 				892CF1AE2592367F0099BD42 /* cert */,
@@ -348,6 +357,24 @@
 			path = chats;
 			sourceTree = "<group>";
 		};
+		89C43B7325978749002D90AF /* fileservice */ = {
+			isa = PBXGroup;
+			children = (
+				89C43B83259787E9002D90AF /* FileTransfer.pb.swift */,
+				89C43B82259787E9002D90AF /* FileTransfer.proto */,
+				89C43B7C259787CD002D90AF /* FileTransfer.grpc.swift */,
+			);
+			path = fileservice;
+			sourceTree = "<group>";
+		};
+		89C43B8A259788AC002D90AF /* grpc */ = {
+			isa = PBXGroup;
+			children = (
+				89C43B8B259788B8002D90AF /* GrpcChattConnection.swift */,
+			);
+			path = grpc;
+			sourceTree = "<group>";
+		};
 		89D485CC25945D4D00D1E1FC /* contacts */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +395,7 @@
 		89EE5F98258E614A00015350 /* protos */ = {
 			isa = PBXGroup;
 			children = (
+				89C43B7325978749002D90AF /* fileservice */,
 				89EE5F99258E615D00015350 /* auth */,
 			);
 			path = protos;
@@ -624,6 +652,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C43B85259787E9002D90AF /* FileTransfer.pb.swift in Sources */,
 				89BC5EEC257B6CEE0061D614 /* WHCameraView.swift in Sources */,
 				898FE5632594A8A20084AEDD /* TraitCollectionListenerView.swift in Sources */,
 				8956282F258B636B0087B4B1 /* ChatFooterView.swift in Sources */,
@@ -631,6 +660,7 @@
 				8993C24D258F3CE700E97B73 /* AuthServiceStore.swift in Sources */,
 				8952A2D2257BC5A600B6A253 /* SearchBar.swift in Sources */,
 				897AB207257D1A65001E4ECC /* SUImagePickerView.swift in Sources */,
+				89C43B8C259788B8002D90AF /* GrpcChattConnection.swift in Sources */,
 				89D4861625948C6300D1E1FC /* NavigationBarModifier.swift in Sources */,
 				8952A2B4257BC09A00B6A253 /* CameraController.swift in Sources */,
 				89BC5EB9257B55780061D614 /* SettingsUserHeader.swift in Sources */,
@@ -647,7 +677,9 @@
 				8952A2B6257BC09A00B6A253 /* CameraViewController.swift in Sources */,
 				89EE5F9F258E61BA00015350 /* AuthService.pb.swift in Sources */,
 				8952A2D8257BC9D800B6A253 /* ViewContentResolver.swift in Sources */,
+				89C43B7D259787CD002D90AF /* FileTransfer.grpc.swift in Sources */,
 				89BC5ECF257B64E50061D614 /* SettingsSecondBlock.swift in Sources */,
+				89C43B84259787E9002D90AF /* FileTransfer.proto in Sources */,
 				89EE5FA6258E620600015350 /* PhoneAuthScreen.swift in Sources */,
 				89BC5ED6257B651B0061D614 /* SettingsCommonListItem.swift in Sources */,
 				89D485CE25945D5B00D1E1FC /* ContactService.swift in Sources */,

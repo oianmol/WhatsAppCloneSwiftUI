@@ -42,10 +42,10 @@ final class AuthServiceStore : ObservableObject{
             var authRequest = AuthVerify()
             authRequest.phoneNumber = phoneNumber
             authRequest.code = otp
-            let clientConnection = getClientConnection()
+            let clientConnection = GrpcChattConnection.getClientConnection()
             if let connection = clientConnection {
                 let authService = AuthServiceClient(channel: connection)
-                let authResult = try authService.verifyOtp(authRequest,callOptions: makeOptions()).response.wait()
+                let authResult = try authService.verifyOtp(authRequest,callOptions: GrpcChattConnection.makeOptions()).response.wait()
                 return Pair(authResult,nil)
             }else{
                 return Pair(nil,GRPCError.runtimeError("Failed to load cert"))
@@ -60,10 +60,10 @@ final class AuthServiceStore : ObservableObject{
             var authRequest = AuthRequest()
             authRequest.phoneNumber = phoneNumber
             
-            let clientConnection = getClientConnection()
+            let clientConnection = GrpcChattConnection.getClientConnection()
             if let connection = clientConnection {
                 let authService = AuthServiceClient(channel: connection)
-                let authResult = try authService.authorize(authRequest,callOptions: makeOptions()).response.wait()
+                let authResult = try authService.authorize(authRequest,callOptions: GrpcChattConnection.makeOptions()).response.wait()
                 return Pair(authResult,nil)
             }else{
                 return Pair(nil,GRPCError.runtimeError("Failed to load cert"))
@@ -74,35 +74,7 @@ final class AuthServiceStore : ObservableObject{
         }
     }
     
-    func makeOptions() -> CallOptions {
-        
-        var header = HPACKHeaders()
-        header.add(name: "platform", value: "ios")
-        
-        var option = CallOptions(customMetadata: header)
-        option.cacheable = false
-        option.timeLimit = TimeLimit.timeout(TimeAmount.seconds(15))
-        return option
-    }
-    
-    func getClientConnection() -> ClientConnection? {
-        do {
-           
-            let certfile = Bundle.main.path(forResource: "my-public-key-cert", ofType: ".pem")!
-           
-            let config = ClientConnection.Configuration(
-                target: .hostAndPort("192.168.1.15", 8443),
-                eventLoopGroup: MultiThreadedEventLoopGroup(numberOfThreads: System.coreCount),
-                tls: .init(certificateChain: try NIOSSLCertificate.fromPEMFile(certfile).map { .certificate($0) },
-                           certificateVerification: .none))
-            
-            let connection = ClientConnection(configuration: config)
-            return connection
-        } catch {
-            print("ERROR\n\(error)")
-            return nil
-        }
-    }
+
     
 }
 
